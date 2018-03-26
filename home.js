@@ -24,5 +24,5 @@ function newPlayer(){
 }
 
 function oldPlayer(){
-  alert('welcome Back ' + savedUserName);
+  alert('Welcome back ' + savedUserName);
 }
