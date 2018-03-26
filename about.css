@@ -1,25 +1,52 @@
-html {
-  width: 100%;
-}
 h1 {
-  margin-bottom: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  width: 100vw;
   text-align: center;
   font-size: 5em;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 section {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  width: 100vw;
+  
 }
 
 div {
   display: inline-block;
-  border: 1px solid red;
-  margin: 0 2%;
-  width: 280px;
+  /* border: 1px solid red; */
+  margin: 3% 4%;
+
+}
+
+p {
+  color: white;
+  padding: 0;
+  margin: 2em 0 0 0;
+  width: 40vw;
 }
 
 img {
-  width: 150px;
+  display: block;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+body > footer {
+  margin-top: 4em;
+  width: 100vw;
+}
+
+a {
+  font-size: 2em;
+  color: white;
+  margin: 0 2em 1em 0;
+  float: right;
+}
+
+a:hover {
+  color: yellow;
   
 }
