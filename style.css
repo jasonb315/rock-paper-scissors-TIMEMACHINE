@@ -1,7 +1,21 @@
-body {
+#gameplayBody {
   height: 90vh;
   width: 100vh;
   background-image: url("img/GAMEPLAYbg.gif");
+  background-size: 100vw 100vh;
+}
+
+#scoresBody{
+  height: 90vh;
+  width: 100vh;
+  background-image: url("img/GAMEPLAYbg.gif");
+  background-size: 100vw 100vh;
+}
+
+#indexBody{
+  height: 90vh;
+  width: 100vh;
+  background-image: url("img/TITLEbg.gif");
   background-size: 100vw 100vh;
 }
 
