@@ -1,12 +1,9 @@
-var options = ['rock', 'paper', 'scissors'];
+// var round = 0;
 
-var round = 0;
-
-var lives = 5;
+// var lives = 5;
 
 // var playerChoice = ;
-var computerChoice = Math.random();
-console.log(computerChoice);
+// console.log(computerChoice);
 var playerRock = document.getElementById('rock');
 var playerPaper = document.getElementById('paper');
 var playerScissors = document.getElementById('scissors');
@@ -15,6 +12,7 @@ playerRock.addEventListener('click', playerSelRock);
 playerPaper.addEventListener('click', playerSelPaper);
 playerScissors.addEventListener('click', playerSelScissors);
 
+var selectChoice = '';
 
 // win () user wins, add points, add round, soemthing
 
@@ -25,66 +23,64 @@ playerScissors.addEventListener('click', playerSelScissors);
 // var timeMachine = false;
 // var cannibal = false;
 
-if (computerChoice <.33) { 
+function computerDecision() {
+  var computerChoice = Math.random();
+  if (computerChoice < .33) {
+    var selectedChoice = 'rock';
 
-  selectedChoice = 'rock'; 
+  } else if (computerChoice > .67) {
+    selectedChoice = 'paper';
+
+  } else {
+    selectedChoice = 'scissors';
+  }
+  selectChoice = selectedChoice;
 }
-else if  (computerChoice >.67) {
 
-  selectedChoice = 'paper';
-
-} else {
-  selectedChoice = 'scissors';
-}
-
-
-function playerSelRock() { 
-
-  if (computerChoice === 'scissors')
-  // win();
+function playerSelRock() {
+  computerDecision();
+  if (selectChoice === 'scissors') {
+    // win();
     console.log('rockwin');
-
-  if (computerChoice === 'paper')
-  // loose(); 
+  } else if (selectChoice === 'paper') {
+    // loose();
     console.log('rocklose');
-
-  if (computerChoice === 'rock')
-  // tie (); 
+  } else if (selectChoice === 'rock') {
+    // tie ();
     console.log('rocktie');
-
+  }
 }
 
-function playerSelPaper() { 
-
-  if (computerChoice === 'scissors')
-  // loose();
+function playerSelPaper() {
+  computerDecision();
+  if (selectChoice === 'scissors') {
+    // loose();
     console.log('paperwin');
 
-
-  else if (computerChoice === 'paper')
-  // tie(); 
+  } else if (selectChoice === 'paper') {
+    // tie();
     console.log('papertie');
 
-  else if (computerChoice === 'rock')
-  // win (); 
+  } else if (selectChoice === 'rock') {
+    // win ();
     console.log('paperlose');
-
+  }
 }
 
-function playerSelScissors() { 
-
-  if (computerChoice === 'scissors')
-  // tie();
+function playerSelScissors() {
+  computerDecision();
+  if (selectChoice === 'scissors') {
+    // tie();
     console.log('scissorstie');
-
-  else if (computerChoice === 'paper')
-  // loose(); 
+  } else if (selectChoice === 'paper') {
+    // loose();
     console.log('scissorswin');
-
-  else if (computerChoice === 'rock')
-  // win (); 
+  } else if (selectChoice === 'rock') {
+    // win ();
     console.log('scissorslose');
-
+  }
 }
+
+
 
 
