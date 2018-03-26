@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 #gameplayBody {
   height: 90vh;
+=======
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+body {
+  height: 100vh;
+>>>>>>> 52c45fd1fc6b360385be461a5616365a4ce9d1a2
   width: 100vh;
   background-image: url("img/GAMEPLAYbg.gif");
   background-size: 100vw 100vh;
@@ -61,6 +74,7 @@
 }
 
 
+<<<<<<< HEAD
 #rock {
   width:80%;
 
@@ -83,6 +97,8 @@
   display:inline-block;
 }
 
+=======
+>>>>>>> 52c45fd1fc6b360385be461a5616365a4ce9d1a2
 /* 
 
 COLOR PALETTE
@@ -103,3 +119,4 @@ purple red: 204 0 69
 #CC0045
 
 */
+
