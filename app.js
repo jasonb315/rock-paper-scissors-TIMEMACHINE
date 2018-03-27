@@ -1,5 +1,12 @@
 var round = 0;
 var lives = 5;
+var cannibalTurn = 0;
+var cannibalActivate = false;
+
+// Computer modifier variables
+var computerCannibalActivation = false;
+var computerCannibalTurn = 0;
+
 
 
 // var playerChoice = ;
@@ -8,6 +15,33 @@ var playerRock = document.getElementById('rock');
 var playerPaper = document.getElementById('paper');
 var playerScissors = document.getElementById('scissors');
 var roundNumber = document.getElementById('roundNumber');
+var playerCannibal = document.getElementById('cannibal');
+var playerTM = document.getElementById('time-machine');
+
+
+//Time Machine
+//Create array/variable with previous hands
+
+
+//Both modifiers
+
+
+//Cannibal Modifier
+function cannibalIdentifier(){
+  if(cannibalTurn > 3){
+    cannibalModifier.eventlistner('click', activateCannibal);
+  } else {
+    cannibalTurn++;
+  }
+}
+
+function activateCannibal(event){
+  cannibalActivate = true;
+}
+
+
+
+
 
 
 if (lives > 0) {
@@ -27,6 +61,15 @@ function win() {
   console.log('round ' + round);
 }
 function tie() {
+  if(cannibalActivate === true && computerCannibal === false){
+    cannibalActivate = false;
+    cannibalTurn = 0;
+    win();
+  } else if (cannibalActivate === false && computerCannibal === true){
+    computerCaninbal = false;
+    computerCannibalTurn = 0;
+    lose();
+  }
   console.log('still round ' + round);
 }
 function lose() {
@@ -52,6 +95,18 @@ function computerDecision() {
     selectedChoice = 'scissors';
   }
   selectChoice = selectedChoice;
+}
+
+var computerModifierRandom = Math.random();
+
+function computerCannibalCalculation(){
+
+  if(computerCannibalTurn > 3 && computerModifierRandom > .25){
+    computerCannibalTurn = 0;
+    computerCannibalActivation = true;
+  } else {
+    computerCannibalTurn++;
+  }
 }
 
 function playerSelRock() {
