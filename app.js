@@ -18,6 +18,8 @@ var roundNumber = document.getElementById('roundNumber');
 var playerCannibal = document.getElementById('cannibal');
 var playerTM = document.getElementById('time-machine');
 
+playerCannibal.checked = false;
+playerTM.checked = false;
 
 //Time Machine
 //Create array/variable with previous hands
@@ -54,6 +56,7 @@ playerScissors.addEventListener('click', playerSelScissors);
 
 
 function triggerGame(){
+
   if (lives > 0) {
     cannibalIdentifier();
     computerCannibalCalculation();
@@ -175,6 +178,5 @@ function playerSelScissors() {
   }
   triggerGame();
 }
-
 
 triggerGame();
