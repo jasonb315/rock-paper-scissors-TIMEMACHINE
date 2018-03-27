@@ -20,7 +20,6 @@
 #playbox{
   width:100%;
   height:30%;
-
 }
 
 #play-img{
@@ -28,71 +27,11 @@
   margin:auto;
 }
 
-#gameplayBody {
-  height: 90vh;
-  width: 100vh;
-  background-image: url("img/GAMEPLAYbg.gif");
-}
-
 #indexBody{
   height: 90vh;
   width: 100vh;
   background-image: url("img/TITLEbg.gif");
   background-size: 100vw 100vh;
-}
-
-#gamemid{
-  height:60vh;
-}
-
-#selections {
-  width: 40vw;
-  height:20vh;
-  float: left;
-  margin-left:50px;
-}
-
-.selectdiv {
-  display:inline-block;
-  width:32%;
- 
-}
-
-#rock:hover {
-  transform: scale(1.1);
-}
-
-#paper:hover {
-  transform: scale(1.1);
-}
-
-#scissors:hover {
-  transform: scale(1.1);
-}
-
-#rock:active{
-  transform: scale(1);
-}
-
-#paper:active {
-  transform: scale(1);
-}
-
-#scissors:active {
-  transform: scale(1);
-}
-
-#rock {
-  width:80%;
-
-}
-
-#paper{
-  width:80%;
-}
-
-#scissors{
-  width:80%;
 }
 
 #round{
