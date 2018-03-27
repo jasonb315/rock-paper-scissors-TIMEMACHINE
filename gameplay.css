@@ -4,8 +4,13 @@
   background-image: url("img/GAMEPLAYbg.gif");
 }
 
+header {
+  height:10vh;
+  background-color: blue;
+}
+
 #gamemid{
-  height:60vh;
+  height:30vh;
 }
 
 #selections {
@@ -74,4 +79,11 @@
 
 .modifier{
   background-color: red;
+}
+
+#heartrack{
+  height: 10vh;
+  width: 25%;
+  float:right;
+  background-color: aqua;
 }
