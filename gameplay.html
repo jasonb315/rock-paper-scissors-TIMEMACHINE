@@ -4,7 +4,7 @@
     <head>
 
       <link rel="stylesheet" href="reset.css">
-      <link rel="stylesheet" href="style.css">
+      <!-- <link rel="stylesheet" href="style.css"> -->
       <link rel="stylesheet" href="gameplay.css">
 
       <title>
@@ -13,6 +13,14 @@
     </head>
 
     <body id="gameplayBody">
+
+      <audio id="playAudio" controls>
+        <source src="audio/craycray.mp3" type="audio/mpeg">
+        
+      </audio><br>
+      <button onclick="enableControls()" type="button">Enable Controls</button>
+      <button onclick="disableControls()" type="button">Disable Controls</button>
+      
 
       <header>
 
@@ -98,4 +106,21 @@
     </footer>
 
     <script src ="app.js"></script>
+     
+    <script>
+      var themeMusic = document.getElementById("playAudio");
+      function enableControls() { 
+          themeMusic.controls = true;
+          themeMusic.load();
+      } 
+      
+      function disableControls() { 
+          themeMusic.controls = false;
+          themeMusic.load();
+      } 
+    </script>
+
+
+         
+  
 </html>

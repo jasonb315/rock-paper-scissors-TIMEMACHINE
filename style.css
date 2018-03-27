@@ -1,102 +1,110 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#gameplayBody {
-  height: 90vh;
-  width: 100vh;
-  background-image: url("img/GAMEPLAYbg.gif");
-}
-
-#indexBody{
-  height: 90vh;
-  width: 100vh;
+Body{
+  /* height: 90vh; */
+  /* width: 100vh; */
   background-image: url("img/TITLEbg.gif");
-  background-size: 100vw 100vh;
+  background-size: 100%;
 }
 
-#gamemid{
-  height:60vh;
+#spacer {
+  height: 15vh;
+  width:100%;
+  /* background-color: aqua; */
 }
 
-#selections {
-  width: 40vw;
-  height:20vh;
-  float: left;
-  margin-left:50px;
+#title {
+  height:45vh;
+  /* display:inline-block; */
+  /* background-color: blue; */
 }
 
-.selectdiv {
+.centerimg{
+  margin:auto;
+  width:77vw;
+  height:100%;
+  /* background-color: red; */
+}
+
+#title-img{
+  margin:auto;
+  width:100%;
+}
+
+#playsection{
+  height:10vh;
+  width:100vw;
+  /* background-color: green; */
+}
+
+#playbox{
+  width: 12%;
+  height:100%;
+  /* background-color: purple; */
+  margin:auto;
+}
+
+#play-img{
+  width:100%;
+  /* margin:auto; */
+  /* height: 100px;
+  width: 300px; */
+  /* margin: 15px 0; */
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+
+#play-img:hover {
+  /* height: 133px; */
+  width: 150%;
+  margin-left: -60px;
+}
+
+#spacer2{
+  height:5vh;
+}
+
+#about-score{
+  height:10vh;
+  /* background-color: orange; */
+}
+
+#aboutbox {
+  width:15%;
+  height:100%;
+  margin-left: 150px;
+  /* background-color: red; */
+  display:inline-block
+}
+
+#about-img {
+  width:200px;
+  opacity: .4;
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -o-transition: all .1s ease;
+}
+
+#about-img:hover {
+  /* height: 133px; */
+  opacity: 1;
+  width: 220px;
+  margin-top: -20px;
+}
+
+#scoreboardbox {
+  width:25%;
+  height:100%;
+  margin-right: 80px;
+  /* background-color: red; */
+  float:right;
+}
+
+#score-img{
+  height:100%;
+}
+
+#highest-round{
   display:inline-block;
-  width:32%;
- 
+  color: goldenrod;
+  font-size: 50px;
 }
-
-#rock:hover {
-  transform: scale(1.1);
-}
-
-#paper:hover {
-  transform: scale(1.1);
-}
-
-#scissors:hover {
-  transform: scale(1.1);
-}
-
-#rock:active{
-  transform: scale(1);
-}
-
-#paper:active {
-  transform: scale(1);
-}
-
-#scissors:active {
-  transform: scale(1);
-}
-
-#rock {
-  width:80%;
-
-}
-
-#paper{
-  width:80%;
-}
-
-#scissors{
-  width:80%;
-}
-
-#round{
-  display:inline-block;
-}
-
-#roundnumber{
-  display:inline-block;
-}
-
-/* 
-
-COLOR PALETTE
-
-light blue: 20 166 204 
-#14A6CC
-
-dark blueL 56 133 153
-#388599
-
-dandylion 255 255 22
-#FFFF16
-
-orange red: 255 59 49
-#FF3B31
-
-purple red: 204 0 69 
-#CC0045
-
-*/
-

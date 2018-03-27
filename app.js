@@ -1,4 +1,5 @@
 var round = 0;
+
 var lives = 500;
 var cannibalTurn = 0;
 var cannibalActivate = false;
@@ -7,6 +8,8 @@ var cannibalActivate = false;
 var computerCannibalActivation = false;
 var computerCannibalTurn = 0;
 
+var computerLastInput = '';
+var playerLastInput = '';
 
 
 // var playerChoice = ;
@@ -126,6 +129,8 @@ function computerDecision() {
     selectedChoice = 'scissors';
   }
   selectChoice = selectedChoice;
+  computerLastInput = selectChoice;
+  console.log(computerLastInput);
 }
 
 var computerModifierRandom = Math.random();
@@ -142,6 +147,7 @@ function computerCannibalCalculation(){
 }
 
 function playerSelRock() {
+  playerLastInput = 'rock';
   computerDecision();
   if (selectChoice === 'scissors') {
     win();
@@ -154,6 +160,7 @@ function playerSelRock() {
 }
 
 function playerSelPaper() {
+  playerLastInput = 'paper';
   computerDecision();
   if (selectChoice === 'scissors') {
     lose();
@@ -168,6 +175,7 @@ function playerSelPaper() {
 }
 
 function playerSelScissors() {
+  playerLastInput = 'scissors';
   computerDecision();
   if (selectChoice === 'scissors') {
     tie();
