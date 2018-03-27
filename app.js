@@ -1,5 +1,4 @@
 var round = 0;
-
 var lives = 500;
 var cannibalTurn = 0;
 var cannibalActivate = false;
@@ -8,8 +7,6 @@ var cannibalActivate = false;
 var computerCannibalActivation = false;
 var computerCannibalTurn = 0;
 
-var computerLastInput = '';
-var playerLastInput = '';
 
 
 // var playerChoice = ;
@@ -35,10 +32,12 @@ playerTM.checked = false;
 //Cannibal Modifier
 function cannibalIdentifier(){
   if(cannibalTurn > 3){
+    playerCannibal.style.opacity = '1';
     console.log('cannibal event listener is activated');
     playerCannibal.addEventListener('click', activateCannibal);
 
   } else {
+    playerCannibal.style.opacity = '0.5';
     console.log('cannibal is deactivated');
     playerCannibal.removeEventListener('click', activateCannibal);
     cannibalTurn++;
@@ -129,8 +128,6 @@ function computerDecision() {
     selectedChoice = 'scissors';
   }
   selectChoice = selectedChoice;
-  computerLastInput = selectChoice;
-  console.log(computerLastInput);
 }
 
 var computerModifierRandom = Math.random();
@@ -147,7 +144,6 @@ function computerCannibalCalculation(){
 }
 
 function playerSelRock() {
-  playerLastInput = 'rock';
   computerDecision();
   if (selectChoice === 'scissors') {
     win();
@@ -160,7 +156,6 @@ function playerSelRock() {
 }
 
 function playerSelPaper() {
-  playerLastInput = 'paper';
   computerDecision();
   if (selectChoice === 'scissors') {
     lose();
@@ -175,7 +170,6 @@ function playerSelPaper() {
 }
 
 function playerSelScissors() {
-  playerLastInput = 'scissors';
   computerDecision();
   if (selectChoice === 'scissors') {
     tie();
@@ -184,44 +178,7 @@ function playerSelScissors() {
   } else if (selectChoice === 'rock') {
     lose();
   }
-  
-  
-  
-  
-//sound effects for buttons
-
-var soundRock = document.getElementById('rock');
-var soundPaper = document.getElementById('paper');
-var soundScissors = document.getElementById('scissors');
-
-soundRock.addEventListener('click', playRockSound);
-soundPaper.addEventListener('click', playPaperSound);
-soundScissors.addEventListener('click', playerScissorsSound);
-
-function playRockSound () {
-
-  var audio = new Audio('audio/craycray.mp3');
-  audio.play();
-
-}
-
-function playPaperSound () {
-
-  var audio = new Audio('audio/craycray.mp3');
-  audio.play();
-
-
-}
-
-function playerScissorsSound () {
-
-  var audio = new Audio('audio/craycray.mp3');
-  audio.play();
-
-}
-
   triggerGame();
 }
 
 triggerGame();
-

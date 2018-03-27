@@ -4,7 +4,7 @@
     <head>
 
       <link rel="stylesheet" href="reset.css">
-      <!-- <link rel="stylesheet" href="style.css"> -->
+      <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="gameplay.css">
 
       <title>
@@ -13,14 +13,6 @@
     </head>
 
     <body id="gameplayBody">
-
-      <audio id="playAudio" controls>
-        <source src="audio/craycray.mp3" type="audio/mpeg">
-        
-      </audio><br>
-      <button onclick="enableControls()" type="button">Enable Controls</button>
-      <button onclick="disableControls()" type="button">Disable Controls</button>
-      
 
       <header>
 
@@ -77,13 +69,10 @@
             <img id="thrid-basic-move" src="" alt="">
 
 
-<div id="modif">
-  <label for="cannibal-mod">
-  </label>
-  <!-- <img src="img/TIMEplay.gif" alt=""> -->
-  <input id= "cannibal" for="modifier" type="radio" name="modifier">
-              
-              <input id="time-machine" for="modifier" type="radio" name="modifier">
+            <div class="modifier">
+             <img id="cannibal" src="img/CANNONplay.gif" alt="">
+              <img id="time-machine" src="img/TIMEplay.gif" alt="">
+            </div>
               
               
               <!-- <img src="img/PAPERplay.gif" alt=""> -->
@@ -106,21 +95,4 @@
     </footer>
 
     <script src ="app.js"></script>
-     
-    <script>
-      var themeMusic = document.getElementById("playAudio");
-      function enableControls() { 
-          themeMusic.controls = true;
-          themeMusic.load();
-      } 
-      
-      function disableControls() { 
-          themeMusic.controls = false;
-          themeMusic.load();
-      } 
-    </script>
-
-
-         
-  
 </html>
