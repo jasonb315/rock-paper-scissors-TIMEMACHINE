@@ -2,7 +2,8 @@ var round = 0;
 var lives = 500;
 var cannibalTurn = 0;
 var cannibalActivate = false;
-
+var computerPrevious = '';
+var playerPrevious = '';
 // Computer modifier variables
 var computerCannibalActivation = false;
 var computerCannibalTurn = 0;
@@ -33,12 +34,12 @@ playerTM.checked = false;
 function cannibalIdentifier(){
   if(cannibalTurn > 3){
     playerCannibal.style.opacity = '1';
-    console.log('cannibal event listener is activated');
+    // console.log('player cannibal event listener is activated');
     playerCannibal.addEventListener('click', activateCannibal);
 
   } else {
     playerCannibal.style.opacity = '0.5';
-    console.log('cannibal is deactivated');
+    // console.log('cannibal is deactivated');
     playerCannibal.removeEventListener('click', activateCannibal);
     cannibalTurn++;
     console.log('cannibal turn', cannibalTurn);
@@ -58,7 +59,7 @@ playerScissors.addEventListener('click', playerSelScissors);
 
 
 function triggerGame(){
-
+console.log('__________' + round)
   if (lives > 0) {
     cannibalIdentifier();
     computerCannibalCalculation();
@@ -94,9 +95,9 @@ function tie() {
     computerCannibalActivation = false;
     computerCannibalTurn = 0;
     lose();
+  } else {
+    console.log('game tie, no cannonballs ' + round)
   }
-  console.log('still round ' + round);
-  console.log('tie');
 }
 
 
@@ -120,12 +121,15 @@ function computerDecision() {
   var computerChoice = Math.random();
   if (computerChoice < .33) {
     var selectedChoice = 'rock';
+    console.log('computer played rock')
 
   } else if (computerChoice > .67) {
     selectedChoice = 'paper';
+    console.log('computer played paper')
 
   } else {
     selectedChoice = 'scissors';
+    console.log('computer played scissors')
   }
   selectChoice = selectedChoice;
 }
@@ -137,14 +141,16 @@ function computerCannibalCalculation(){
   if(computerCannibalTurn > 3 && computerModifierRandom > .25){
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
+    console.log('comp used cannonball');
   } else {
     computerCannibalTurn++;
   }
-  console.log('computerCannibal turn', computerCannibalTurn);
+  console.log('computerCannibal turn ', computerCannibalTurn);
 }
 
 function playerSelRock() {
   computerDecision();
+  console.log('player played rock')
   if (selectChoice === 'scissors') {
     win();
   } else if (selectChoice === 'paper') {
@@ -157,6 +163,7 @@ function playerSelRock() {
 
 function playerSelPaper() {
   computerDecision();
+  console.log('player played paper')
   if (selectChoice === 'scissors') {
     lose();
 
@@ -171,6 +178,7 @@ function playerSelPaper() {
 
 function playerSelScissors() {
   computerDecision();
+  console.log('player played scissors')
   if (selectChoice === 'scissors') {
     tie();
   } else if (selectChoice === 'paper') {
