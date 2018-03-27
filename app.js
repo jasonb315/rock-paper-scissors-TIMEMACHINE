@@ -1,7 +1,16 @@
 var round = 0;
-var lives = 5;
+
+var lives = 500;
+var cannibalTurn = 0;
+var cannibalActivate = false;
+
+// Computer modifier variables
+var computerCannibalActivation = false;
+var computerCannibalTurn = 0;
+
 var computerLastInput = '';
 var playerLastInput = '';
+
 
 // var playerChoice = ;
 // console.log(computerChoice);
@@ -9,32 +18,99 @@ var playerRock = document.getElementById('rock');
 var playerPaper = document.getElementById('paper');
 var playerScissors = document.getElementById('scissors');
 var roundNumber = document.getElementById('roundNumber');
+var playerCannibal = document.getElementById('cannibal');
+var playerTM = document.getElementById('time-machine');
+
+playerCannibal.checked = false;
+playerTM.checked = false;
+
+//Time Machine
+//Create array/variable with previous hands
 
 
-if (lives > 0) {
-  playerRock.addEventListener('click', playerSelRock);
-  playerPaper.addEventListener('click', playerSelPaper);
-  playerScissors.addEventListener('click', playerSelScissors);
+// modifier event Listener
+// playerTM.addEventListener('click', )
 
-} else {
-  alert('You\'re done!');
-  window.location.href = 'index.html';
+
+//Cannibal Modifier
+function cannibalIdentifier(){
+  if(cannibalTurn > 3){
+    console.log('cannibal event listener is activated');
+    playerCannibal.addEventListener('click', activateCannibal);
+
+  } else {
+    console.log('cannibal is deactivated');
+    playerCannibal.removeEventListener('click', activateCannibal);
+    cannibalTurn++;
+    console.log('cannibal turn', cannibalTurn);
+  }
+
+}
+
+function activateCannibal(){
+  console.log('player cannibal is being used');
+  cannibalActivate = true;
+}
+
+playerRock.addEventListener('click', playerSelRock);
+playerPaper.addEventListener('click', playerSelPaper);
+playerScissors.addEventListener('click', playerSelScissors);
+
+
+
+function triggerGame(){
+
+  if (lives > 0) {
+    cannibalIdentifier();
+    computerCannibalCalculation();
+
+  } else {
+    alert('You\'re done!');
+    window.location.href = 'index.html';
+  }
 }
 
 var selectChoice = '';
 
+
 function win() {
+  if(cannibalActivate === true){
+    cannibalActivate = false;
+    cannibalTurn = 0;
+  }
   round++;
   console.log('round ' + round);
+  console.log('win');
 }
+
+
 function tie() {
+  if(cannibalActivate === true && computerCannibalActivation === false){
+    console.log('player activate cannibal, player win');
+    cannibalActivate = false;
+    cannibalTurn = 0;
+    win();
+  } else if (cannibalActivate === false && computerCannibalActivation === true){
+    console.log('computer activated cannibal, player lose');
+    computerCannibalActivation = false;
+    computerCannibalTurn = 0;
+    lose();
+  }
   console.log('still round ' + round);
+  console.log('tie');
 }
+
+
 function lose() {
+  console.log('lose');
   lives--;
   round++;
   console.log('round ' + round);
   console.log('lives left: ' + lives);
+  if(cannibalActivate === true){
+    cannibalActivate = false;
+    cannibalTurn = 0;
+  }
   if (lives === 0) {
     alert('You\'re done!');
     window.location.href = 'index.html';
@@ -57,19 +133,30 @@ function computerDecision() {
   console.log(computerLastInput);
 }
 
+var computerModifierRandom = Math.random();
+
+function computerCannibalCalculation(){
+
+  if(computerCannibalTurn > 3 && computerModifierRandom > .25){
+    computerCannibalTurn = 0;
+    computerCannibalActivation = true;
+  } else {
+    computerCannibalTurn++;
+  }
+  console.log('computerCannibal turn', computerCannibalTurn);
+}
+
 function playerSelRock() {
   playerLastInput = 'rock';
   computerDecision();
   if (selectChoice === 'scissors') {
     win();
-    console.log('rockwin');
   } else if (selectChoice === 'paper') {
     lose();
-    console.log('rocklose');
   } else if (selectChoice === 'rock') {
     tie();
-    console.log('rocktie');
   }
+  triggerGame();
 }
 
 function playerSelPaper() {
@@ -77,16 +164,14 @@ function playerSelPaper() {
   computerDecision();
   if (selectChoice === 'scissors') {
     lose();
-    console.log('paperlose');
 
   } else if (selectChoice === 'paper') {
     tie();
-    console.log('papertie');
 
   } else if (selectChoice === 'rock') {
     win();
-    console.log('paperwin');
   }
+  triggerGame();
 }
 
 function playerSelScissors() {
@@ -94,17 +179,15 @@ function playerSelScissors() {
   computerDecision();
   if (selectChoice === 'scissors') {
     tie();
-    console.log('scissorstie');
   } else if (selectChoice === 'paper') {
     win();
-    console.log('scissorswin');
   } else if (selectChoice === 'rock') {
     lose();
-    console.log('scissorslose');
   }
-}
-
-
+  
+  
+  
+  
 //sound effects for buttons
 
 var soundRock = document.getElementById('rock');
@@ -136,3 +219,9 @@ function playerScissorsSound () {
   audio.play();
 
 }
+
+  triggerGame();
+}
+
+triggerGame();
+
