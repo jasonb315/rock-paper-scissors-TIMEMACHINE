@@ -103,3 +103,36 @@ function playerSelScissors() {
     console.log('scissorslose');
   }
 }
+
+
+//sound effects for buttons
+
+var soundRock = document.getElementById('rock');
+var soundPaper = document.getElementById('paper');
+var soundScissors = document.getElementById('scissors');
+
+soundRock.addEventListener('click', playRockSound);
+soundPaper.addEventListener('click', playPaperSound);
+soundScissors.addEventListener('click', playerScissorsSound);
+
+function playRockSound () {
+
+  var audio = new Audio('audio/craycray.mp3');
+  audio.play();
+
+}
+
+function playPaperSound () {
+
+  var audio = new Audio('audio/craycray.mp3');
+  audio.play();
+
+
+}
+
+function playerScissorsSound () {
+
+  var audio = new Audio('audio/craycray.mp3');
+  audio.play();
+
+}
