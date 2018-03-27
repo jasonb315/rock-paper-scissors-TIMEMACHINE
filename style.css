@@ -6,43 +6,44 @@ Body{
 }
 
 #spacer {
-  height: 30vh;
+  height: 20vh;
   width:100%;
   background-color: aqua;
 }
 
 #title {
-  height:40vh;
+  height:50vh;
   /* display:inline-block; */
   background-color: blue;
 }
 
 .centerimg{
   margin:auto;
-  width:57%;
+  width:77vw;
   height:100%;
   background-color: red;
 }
 
 #title-img{
   margin:auto;
+  width:100%;
 }
 
 #playsection{
-  height:15vh;
+  height:10vh;
   width:100vw;
   background-color: green;
 }
 
 #playbox{
-  width:9%;
-  height:50%;
+  width: 12%;
+  height:100%;
   background-color: purple;
   margin:auto;
 }
 
 #play-img{
-  height:100%;
+  width:100%;
   margin:auto;
 }
 
