@@ -1,6 +1,6 @@
 #gameplayBody {
   /* height: 90vh; */
-  width: 100vh;
+  background-size: 100%;
   background-image: url("img/GAMEPLAYbg.gif");
 }
 

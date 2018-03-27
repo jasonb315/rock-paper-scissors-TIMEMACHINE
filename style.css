@@ -1,11 +1,27 @@
+Body{
+  /* height: 90vh; */
+  /* width: 100vh; */
+  background-image: url("img/TITLEbg.gif");
+  background-size: 100%;
+}
+
 #spacer {
-  height: 20vh;
-  /* width:100%; */
+  height: 30vh;
+  width:100%;
+  background-color: aqua;
 }
 
 #title {
-  height:30vh;
-  display:inline-block;
+  height:40vh;
+  /* display:inline-block; */
+  background-color: blue;
+}
+
+.centerimg{
+  margin:auto;
+  width:57%;
+  height:100%;
+  background-color: red;
 }
 
 #title-img{
@@ -15,23 +31,19 @@
 #playsection{
   height:15vh;
   width:100vw;
+  background-color: green;
 }
 
 #playbox{
-  width:100%;
-  height:30%;
+  width:9%;
+  height:50%;
+  background-color: purple;
+  margin:auto;
 }
 
 #play-img{
   height:100%;
   margin:auto;
-}
-
-#indexBody{
-  height: 90vh;
-  width: 100vh;
-  background-image: url("img/TITLEbg.gif");
-  background-size: 100vw 100vh;
 }
 
 #round{
