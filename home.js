@@ -26,3 +26,37 @@ function newPlayer(){
 function oldPlayer(){
   alert('Welcome back ' + savedUserName);
 }
+
+
+var soundPlay = document.getElementById('play-img');
+var soundAbout = document.getElementById('about-img');
+
+//high score not enabled as a button yet
+//var soundScore = document.getElementById('score-img');
+
+soundPlay.addEventListener('click', startPlaySound);
+soundAbout.addEventListener('click', startAboutSound);
+
+//soundScore.addEventListener('click', startScoreSound);
+
+function startPlaySound () {
+
+  var audio = new Audio('audio/Teleport.wav');
+  audio.play();
+
+}
+
+function startAboutSound () {
+
+  var audio = new Audio('audio/Teleport.wav');
+  audio.play();
+
+
+}
+
+//function startScoreSound () {
+
+//var audio = new Audio('audio/craycray.mp3');
+//audio.play();
+
+//}
