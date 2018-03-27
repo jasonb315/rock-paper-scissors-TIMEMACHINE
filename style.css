@@ -1,74 +1,49 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#gameplayBody {
-  height: 90vh;
-  width: 100vh;
-  background-image: url("img/GAMEPLAYbg.gif");
-}
-
-#indexBody{
-  height: 90vh;
-  width: 100vh;
+Body{
+  /* height: 90vh; */
+  /* width: 100vh; */
   background-image: url("img/TITLEbg.gif");
-  background-size: 100vw 100vh;
+  background-size: 100%;
 }
 
-#gamemid{
-  height:60vh;
+#spacer {
+  height: 30vh;
+  width:100%;
+  background-color: aqua;
 }
 
-#selections {
-  width: 40vw;
-  height:20vh;
-  float: left;
-  margin-left:50px;
+#title {
+  height:40vh;
+  /* display:inline-block; */
+  background-color: blue;
 }
 
-.selectdiv {
-  display:inline-block;
-  width:32%;
- 
+.centerimg{
+  margin:auto;
+  width:57%;
+  height:100%;
+  background-color: red;
 }
 
-#rock:hover {
-  transform: scale(1.1);
+#title-img{
+  margin:auto;
 }
 
-#paper:hover {
-  transform: scale(1.1);
+#playsection{
+  height:15vh;
+  width:100vw;
+  background-color: green;
 }
 
-#scissors:hover {
-  transform: scale(1.1);
+#playbox{
+  width:9%;
+  height:50%;
+  background-color: purple;
+  margin:auto;
 }
 
-#rock:active{
-  transform: scale(1);
-}
-
-#paper:active {
-  transform: scale(1);
-}
-
-#scissors:active {
-  transform: scale(1);
-}
-
-#rock {
-  width:80%;
-
-}
-
-#paper{
-  width:80%;
-}
-
-#scissors{
-  width:80%;
+#play-img{
+  height:100%;
+  margin:auto;
 }
 
 #round{
@@ -78,25 +53,3 @@
 #roundnumber{
   display:inline-block;
 }
-
-/* 
-
-COLOR PALETTE
-
-light blue: 20 166 204 
-#14A6CC
-
-dark blueL 56 133 153
-#388599
-
-dandylion 255 255 22
-#FFFF16
-
-orange red: 255 59 49
-#FF3B31
-
-purple red: 204 0 69 
-#CC0045
-
-*/
-
