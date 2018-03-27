@@ -4,20 +4,29 @@
   background-image: url("img/GAMEPLAYbg.gif");
 }
 
+header {
+  height:10vh;
+  background-color: blue;
+}
+
 #gamemid{
-  height:60vh;
+  height:30vh;
 }
 
 #selections {
   width: 40vw;
-  height:20vh;
+  height:25vh;
   float: left;
   margin-left:50px;
+  background-color: black;
+  border-radius: 25px;
+  /* opacity: 0.5; */
 }
 
 .selectdiv {
   display:inline-block;
   width:32%;
+  /* opacity: 1; */
 }
 
 #rock:hover {
@@ -30,6 +39,14 @@
 
 #scissors:hover {
   transform: scale(1.1);
+}
+
+#time-machine:hover{
+  transform: scale(1.1);
+}
+
+#time-machine:active{
+  transform: scale(1);
 }
 
 #rock:active{
@@ -46,7 +63,6 @@
 
 #rock {
   width:80%;
-
 }
 
 #paper{
@@ -55,4 +71,19 @@
 
 #scissors{
   width:80%;
+}
+
+/* #time-machine{
+  width:20%
+} */
+
+.modifier{
+  background-color: red;
+}
+
+#heartrack{
+  height: 10vh;
+  width: 25%;
+  float:right;
+  background-color: aqua;
 }
