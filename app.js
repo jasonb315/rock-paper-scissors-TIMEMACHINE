@@ -138,6 +138,7 @@ var computerModifierRandom = Math.random();
 
 function computerCannibalCalculation(){
 
+  
   if(computerCannibalTurn > 3 && computerModifierRandom > .25){
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
