@@ -9,40 +9,36 @@ var playerPaper = document.getElementById('paper');
 var playerScissors = document.getElementById('scissors');
 var roundNumber = document.getElementById('roundNumber');
 
-playerRock.addEventListener('click', playerSelRock);
-playerPaper.addEventListener('click', playerSelPaper);
-playerScissors.addEventListener('click', playerSelScissors);
+
+if (lives > 0) {
+  playerRock.addEventListener('click', playerSelRock);
+  playerPaper.addEventListener('click', playerSelPaper);
+  playerScissors.addEventListener('click', playerSelScissors);
+
+} else {
+  alert('You\'re done!');
+  window.location.href = 'index.html';
+}
 
 var selectChoice = '';
 
-function win(){
+function win() {
   round++;
-console.log('round ' + round)
-
+  console.log('round ' + round);
 }
-
-function tie(){
-  console.log('still round ' + round)
+function tie() {
+  console.log('still round ' + round);
 }
-
-function lose(){
+function lose() {
   lives--;
   round++;
-  console.log('round ' + round)
-  console.log ('lives left: ' + lives)
+  console.log('round ' + round);
+  console.log('lives left: ' + lives);
+  if (lives === 0) {
+    alert('You\'re done!');
+    window.location.href = 'index.html';
+  }
 }
-
-// win () user wins, add points, add round, soemthing
-
-// lose () computer wins, lose life, add round, anything else
-
-// tie() rerun game function
-
-// var timeMachine = false;
-// var cannibal = false;
-
-
-
 
 function computerDecision() {
   var computerChoice = Math.random();
@@ -76,7 +72,7 @@ function playerSelPaper() {
   computerDecision();
   if (selectChoice === 'scissors') {
     lose();
-    console.log('paperwin');
+    console.log('paperlose');
 
   } else if (selectChoice === 'paper') {
     tie();
@@ -84,7 +80,7 @@ function playerSelPaper() {
 
   } else if (selectChoice === 'rock') {
     win();
-    console.log('paperlose');
+    console.log('paperwin');
   }
 }
 
@@ -94,14 +90,10 @@ function playerSelScissors() {
     tie();
     console.log('scissorstie');
   } else if (selectChoice === 'paper') {
-    lose();
+    win();
     console.log('scissorswin');
   } else if (selectChoice === 'rock') {
-    win();
+    lose();
     console.log('scissorslose');
   }
 }
-
-
-
-
