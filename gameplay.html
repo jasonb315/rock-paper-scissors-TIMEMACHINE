@@ -2,18 +2,31 @@
 <html>
 
     <head>
-      <a href="https://placeholder.com"></a>
-      <link rel="stylesheet" href="style.css">
+
+      <link rel="stylesheet" href="reset.css">
+      <!-- <link rel="stylesheet" href="style.css"> -->
+      <link rel="stylesheet" href="gameplay.css">
+
       <title>
-
+        Play Rock Paper Scissors Time Machine
       </title>
-
     </head>
 
-    <body>
+    <body id="gameplayBody">
 
       <header>
+
         <p id="round">ROUND:</p><p id="roundNumber"></p>
+        
+        <section>
+          <p id="user-name"></p>
+          <div>
+            <p>Rounds</p>
+            <p id="round-number"></p>
+          </div>
+          <p>Computer</p>
+        </section>
+        
       </header>
     
       <main>
@@ -42,6 +55,25 @@
 
       <footer>
 
+        <!-- display heart img and number of lives remaining
+         -->
+         <div>
+           <img id="heart-img"src="" alt="">
+         </div>
+
+        <!-- display basic/modifier images and 'how to play' button -->
+        <section>
+          <div>
+            <img id="first-basic-move" src="" alt="">
+            <img id="second-basic-move"src="" alt="">
+            <img id="thrid-basic-move" src="" alt="">
+
+            <img id="first-modifier" src="" alt="">
+            <img id="second-modifier" src="" alt="">
+          </div>
+          <a href="">How to Play</a>
+
+        </section>
       </footer>
 
     </body>
@@ -49,5 +81,6 @@
     <footer>
       
     </footer>
+
     <script src ="app.js"></script>
 </html>
