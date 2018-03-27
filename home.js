@@ -1,5 +1,5 @@
 'use strict';
-var playButton = document.getElementById('to-gameplay');
+var playButton = document.getElementById('play-img');
 
 // Load save data from local Storage
 var loadLocalStorage = localStorage.getItem('TM-username');
