@@ -14,6 +14,14 @@
 
     <body id="gameplayBody">
 
+      <audio id="playAudio" controls>
+        <source src="audio/craycray.mp3" type="audio/mpeg">
+        
+      </audio><br>
+      <button onclick="enableControls()" type="button">Enable Controls</button>
+      <button onclick="disableControls()" type="button">Disable Controls</button>
+      
+
       <header>
 
         <p id="round">ROUND:</p><p id="roundNumber"></p>
@@ -68,6 +76,21 @@
             <img id="second-basic-move"src="" alt="">
             <img id="thrid-basic-move" src="" alt="">
 
+
+<div id="modif">
+  <label for="cannibal-mod">
+  </label>
+  <!-- <img src="img/TIMEplay.gif" alt=""> -->
+  <input id= "cannibal" for="modifier" type="radio" name="modifier">
+              
+              <input id="time-machine" for="modifier" type="radio" name="modifier">
+              
+              
+              <!-- <img src="img/PAPERplay.gif" alt=""> -->
+                <label for="">
+              </label>
+</div>
+            
             <img id="first-modifier" src="" alt="">
             <img id="second-modifier" src="" alt="">
           </div>
@@ -83,4 +106,21 @@
     </footer>
 
     <script src ="app.js"></script>
+     
+    <script>
+      var themeMusic = document.getElementById("playAudio");
+      function enableControls() { 
+          themeMusic.controls = true;
+          themeMusic.load();
+      } 
+      
+      function disableControls() { 
+          themeMusic.controls = false;
+          themeMusic.load();
+      } 
+    </script>
+
+
+         
+  
 </html>
