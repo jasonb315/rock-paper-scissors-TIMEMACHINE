@@ -6,19 +6,20 @@
 
 header {
   height:10vh;
-  background-color: blue;
+  /* background-color: #081124; */
 }
 
 #namecard{
   height: 100%;
   line-height: 100%;
-  width:25%;
-  margin-left:50px;
-  background-color: blueviolet;
+  width:39%;
+  /* margin-left:50px; */
+  background-color: #081124;
   font-size: 35px;
-  color: goldenrod;
-  border: 3px solid goldenrod;
+  color: #FFE20D;
+  border: 2px solid #FFE20D;
   display:inline-block;
+  border-radius: 10px;
 }
 
 #name{
@@ -30,13 +31,14 @@ header {
 #computercard{
   height: 100%;
   line-height: 100%;
-  width:25%;
-  margin-right:50px;
-  background-color: blueviolet;
+  width:39%;
+  /* margin-right:50px; */
+  background-color: #081124;
   font-size: 35px;
-  color: goldenrod;
-  border: 3px solid goldenrod;
-  float:right;
+  color: #FFE20D;
+  border: 2px solid #FFE20D;
+  display:inline-block;
+  border-radius: 10px;
 }
 
 #computer{
@@ -46,30 +48,44 @@ header {
 }
 
 #roundcard{
-  margin: auto;
-  width: 30%;
+  /* position: absolute; */
+  width: 19%;
+  height:80px;
   display:inline-block;
-  border: 3px solid goldenrod;
+  margin: auto;
+  background-color: #081124;
+  border: 2px solid #FFE20D;
+  border-radius: 10px;
 }
 
 #rounddiv{
-  background-color: deepskyblue;
+  /* background-color: black; */
+  color:#FFE20D;
 }
 
 #roundnumberdiv{
-  background-color: black;
+  background-color: #081124;
 }
 
 #gamemid{
-  height:50vh;
+  height:60vh;
 }
 
-#selections {
-  width: 40vw;
-  height:25vh;
-  float: left;
+/* ////////////////PLAYER RACK////////////////////////////////////////// */
+
+.playrack{
+  height:20vh;
+  width:100%;
+  /* background-color: red; */
+}
+
+#mainselections {
+  width: 30%;
+  height:100%;
+  display:inline-block;
   margin-left:50px;
-  background-color: black;
+  background-color: #ff3c00;
+  border: 3px solid #FFE20D;
   border-radius: 25px;
   /* opacity: 0.5; */
 }
@@ -79,6 +95,47 @@ header {
   width:32%;
   /* opacity: 1; */
 }
+
+#modcard {
+  width: 20%;
+  height:90%;
+  display:inline-block;
+  /* margin-left:50px; */
+  background-color: #be1a1a;
+  border: 3px solid rgb(255, 150, 13);
+  border-radius: 25px;
+}
+
+.selectdivmod {
+  display:inline-block;
+  width:40%;
+  height:100%;
+  /* opacity: 1; */
+}
+
+#modcard img {
+  height:80%;
+}
+
+#rock {
+  width:100%;
+}
+
+#paper{
+  width:100%;
+}
+
+#scissors{
+  width:100%;
+}
+
+/* #cannibal{
+  width:100%;
+}
+
+#time-machine {
+  width:100%;
+} */
 
 #rock:hover {
   transform: scale(1.1);
@@ -112,31 +169,14 @@ header {
   transform: scale(1);
 }
 
-#rock {
-  width:80%;
-}
 
-#paper{
-  width:80%;
-}
 
-#scissors{
-  width:80%;
-}
-
-.modifier{
-  background-color: red;
-}
-
-#heartrack{
+/* #heartrack{
   height: 10vh;
   width: 25%;
   float:right;
   background-color: aqua;
-}
-
-
-
+} */
 
 
 
@@ -179,4 +219,12 @@ header {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+#howtoplaydiv{
+  background-color:rgb(255, 150, 13);
+  color: #081124;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left:50px;
+  border-radius: 15px;
 }
