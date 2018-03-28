@@ -21,7 +21,7 @@ div {
 }
 
 p {
-  color: white;
+  color: black;
   padding: 0;
   margin: 2em 0 0 0;
   width: 40vw;
@@ -41,12 +41,12 @@ body > footer {
 
 a {
   font-size: 2em;
-  color: white;
+  color: black;
   margin: 0 2em 1em 0;
   float: right;
 }
 
 a:hover {
-  color: yellow;
+  /* color: yellow; */
   
 }
