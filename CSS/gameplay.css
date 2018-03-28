@@ -1,0 +1,230 @@
+#gameplayBody {
+  /* height: 90vh; */
+  background-size: 100%;
+  background-image: url("../img/GAMEPLAYbg.gif");
+}
+
+header {
+  height:10vh;
+  /* background-color: #081124; */
+}
+
+#namecard{
+  height: 100%;
+  line-height: 100%;
+  width:39%;
+  /* margin-left:50px; */
+  background-color: #081124;
+  font-size: 35px;
+  color: #FFE20D;
+  border: 2px solid #FFE20D;
+  display:inline-block;
+  border-radius: 10px;
+}
+
+#name{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+#computercard{
+  height: 100%;
+  line-height: 100%;
+  width:39%;
+  /* margin-right:50px; */
+  background-color: #081124;
+  font-size: 35px;
+  color: #FFE20D;
+  border: 2px solid #FFE20D;
+  display:inline-block;
+  border-radius: 10px;
+}
+
+#computer{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+#roundcard{
+  /* position: absolute; */
+  width: 19%;
+  height:80px;
+  display:inline-block;
+  margin: auto;
+  background-color: #081124;
+  border: 2px solid #FFE20D;
+  border-radius: 10px;
+}
+
+#rounddiv{
+  /* background-color: black; */
+  color:#FFE20D;
+}
+
+#roundnumberdiv{
+  background-color: #081124;
+}
+
+#gamemid{
+  height:60vh;
+}
+
+/* ////////////////PLAYER RACK////////////////////////////////////////// */
+
+.playrack{
+  height:20vh;
+  width:100%;
+  /* background-color: red; */
+}
+
+#mainselections {
+  width: 30%;
+  height:100%;
+  display:inline-block;
+  margin-left:50px;
+  background-color: #ff3c00;
+  border: 3px solid #FFE20D;
+  border-radius: 25px;
+  /* opacity: 0.5; */
+}
+
+.selectdiv {
+  display:inline-block;
+  width:32%;
+  /* opacity: 1; */
+}
+
+#modcard {
+  width: 20%;
+  height:90%;
+  display:inline-block;
+  /* margin-left:50px; */
+  background-color: #be1a1a;
+  border: 3px solid rgb(255, 150, 13);
+  border-radius: 25px;
+}
+
+.selectdivmod {
+  display:inline-block;
+  width:40%;
+  height:100%;
+  /* opacity: 1; */
+}
+
+#modcard img {
+  height:80%;
+}
+
+#rock {
+  width:100%;
+}
+
+#paper{
+  width:100%;
+}
+
+#scissors{
+  width:100%;
+}
+
+/* #cannibal{
+  width:100%;
+}
+
+#time-machine {
+  width:100%;
+} */
+
+#rock:hover {
+  transform: scale(1.1);
+}
+
+#paper:hover {
+  transform: scale(1.1);
+}
+
+#scissors:hover {
+  transform: scale(1.1);
+}
+
+#time-machine:hover{
+  transform: scale(1.1);
+}
+
+#time-machine:active{
+  transform: scale(1);
+}
+
+#rock:active{
+  transform: scale(1);
+}
+
+#paper:active {
+  transform: scale(1);
+}
+
+#scissors:active {
+  transform: scale(1);
+}
+
+
+
+/* #heartrack{
+  height: 10vh;
+  width: 25%;
+  float:right;
+  background-color: aqua;
+} */
+
+
+
+
+
+
+.instruction {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: blue;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#howtoplaydiv{
+  background-color:rgb(255, 150, 13);
+  color: #081124;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left:50px;
+  border-radius: 15px;
+}
