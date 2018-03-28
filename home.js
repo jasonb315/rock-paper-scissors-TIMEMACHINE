@@ -1,26 +1,40 @@
 'use strict';
 var playButton = document.getElementById('play-img');
 
+var modal = document.getElementById('nameCreationModal');
+
+var submitted = document.getElementById('usernameCreation');
+
 // Load save data from local Storage
 var loadLocalStorage = localStorage.getItem('TM-username');
 var savedUserName = JSON.parse(loadLocalStorage);
 
-if(typeof(savedUserName) === 'object'){
+if (typeof (savedUserName) === 'object') {
   playButton.addEventListener('click', newPlayer);
 } else {
   playButton.addEventListener('click', oldPlayer);
 }
 
-function newPlayer(){
 
-  var userName = prompt('Please Enter Your Name');
+function newPlayer() {
+  event.preventDefault();
 
-  alert('Right here is the instructions on how to play the game');
-
-  var userNameToLocalStorage = JSON.stringify(userName);
-  var toLocalStorage = localStorage.setItem('TM-username', userNameToLocalStorage);
+  modal.style.display = 'block';
 }
 
-function oldPlayer(){
+function oldPlayer() {
   alert('Welcome back ' + savedUserName);
 }
+
+function submitter() {
+  event.preventDefault();
+
+  var userName = event.target.username.value;
+  var userNameToLocalStorage = JSON.stringify(userName);
+  var toLocalStorage = localStorage.setItem('TM-username', userNameToLocalStorage);
+  window.location.href='gameplay.html';
+
+  modal.style.display = 'none';
+}
+
+submitted.addEventListener('submit', submitter);
