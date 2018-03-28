@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <link rel="stylesheet" href="reset.css">
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="home.css">
+      <link rel="stylesheet" href="CSS/reset.css">
+      <link rel="stylesheet" href="CSS/style.css">
+      <link rel="stylesheet" href="CSS/home.css">
       <title>
         Rock Paper Scissors Time Machine
       </title>
@@ -25,23 +25,44 @@
       <section id="playsection">
         <!-- Display logo img and play button right underneath -->
         <div id="playbox">
-        <a href="gameplay.html"><img id="play-img" src="img/PLAYbutton.gif" alt=""></a>
+        <a href="HTML/gameplay.html"><img id="play-img" src="img/PLAYbutton.gif" alt=""></a>
         </div>
       </section>
 
-      <div id="nameCreationModal" class="modal">
-  
-          <!-- Modal content -->
+
+
+<!-- window for new users -->
+      <div id="transition-window" class="new-user">
           <div class="modal-content">
             <form id="usernameCreation">
             <p>Enter name here</p>
             <input type="text" id="username">
-            <button id='submitted'>submit</button>
+            <button id='submitted'>How To Play</button>
           </form>
           </div>
-
         </div>
       
+<!-- window for old users -->
+        <div id="welcome-back" class="old-user">
+          <div class="modal-content">
+            <form id="welcome-back-msg">
+            <p id="welcomeBack"></p>
+            <button id="play-game-button">Play Game</button>
+          </form>
+          </div>
+        </div>
+
+<!-- window for How To Play instructions -->
+        <div id="instruction-window" class="instruction">
+          <div class="modal-content">
+            <form id="howtoplay-window">
+              <h2>How To Play Rock Paper Scissors Time Machine!</h2>
+            <p>Here are the instructions. Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
+            <button id="play-game-button">Play Game</button>
+          </form>
+          </div>
+        </div>
+
     </body>
     
     <header id="spacer2">
@@ -52,7 +73,7 @@
 
       <!-- Display 'About Us' and Highest rounds previously recorded, at the bottom of the home page -->
       <div id="aboutbox">
-        <a href="about.html"><img id="about-img" src="img/ABOUTbutton.gif" alt=""></a>
+        <a href="HTML/about.html"><img id="about-img" src="img/ABOUTbutton.gif" alt=""></a>
        
       </div>
 
@@ -62,7 +83,7 @@
         <p id="highest-round">#JS#</p>
       </div>
  
-      <script src="home.js"></script>
+      <script src="JS/home.js"></script>
     
     </section>
     

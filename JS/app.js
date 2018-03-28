@@ -1,3 +1,5 @@
+'use strict';
+
 var round = 0;
 var lives = 500;
 var cannibalTurn = 0;
@@ -90,13 +92,13 @@ function triggerGame(){
 // console.log('__________' + round)
   if (lives > 0) {
     console.log('winS: ' + winStrk);
-    console.log('selectChoice ' + selectChoice)
+    console.log('selectChoice ' + selectChoice);
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();
   } else {
     alert('You\'re done!');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
   }
 }
 
@@ -142,7 +144,7 @@ function lose() {
   }
   if (lives === 0) {
     alert('You\'re done!');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
   }
   winStrk = 0;
 }
@@ -151,15 +153,15 @@ function computerDecision() {
   var computerChoice = Math.random();
   if (computerChoice < .33) {
     var selectedChoice = 'rock';
-    console.log('computer: rock')
+    console.log('computer: rock');
 
   } else if (computerChoice > .67) {
     selectedChoice = 'paper';
-    console.log('computer: paper')
+    console.log('computer: paper');
 
   } else {
     selectedChoice = 'scissors';
-    console.log('computer: scissors')
+    console.log('computer: scissors');
   }
   selectChoice = selectedChoice;
 }
@@ -182,12 +184,12 @@ function computerCannibalCalculation(){
 function playerSelRock() {
   computerDecision();
 
- if(timeWarp === true){
-    console.log('before change: ' + selectChoice)
+  if(timeWarp === true){
+    console.log('before change: ' + selectChoice);
     selectChoice = computerPrevious;
-    console.log('after change: ' + selectChoice)
+    console.log('after change: ' + selectChoice);
     timeWarp = false;
- }
+  }
   // console.log('player: rock')
   if (selectChoice === 'scissors') {
     win();
@@ -204,11 +206,11 @@ function playerSelPaper() {
   computerDecision();
 
   if(timeWarp === true){
-    console.log('before change: ' + selectChoice)
+    console.log('before change: ' + selectChoice);
     selectChoice = computerPrevious;
-    console.log('after change: ' + selectChoice)
+    console.log('after change: ' + selectChoice);
     timeWarp = false;
- }
+  }
   // console.log('player: paper')
   if (selectChoice === 'scissors') {
     lose();
@@ -227,11 +229,11 @@ function playerSelScissors() {
   computerDecision();
 
   if(timeWarp === true){
-    console.log('before change: ' + selectChoice)
+    console.log('before change: ' + selectChoice);
     selectChoice = computerPrevious;
-    console.log('after change: ' + selectChoice)
+    console.log('after change: ' + selectChoice);
     timeWarp = false;
- }
+  }
   // console.log('player: scissors')
   if (selectChoice === 'scissors') {
     tie();
@@ -245,3 +247,19 @@ function playerSelScissors() {
 }
 
 triggerGame();
+
+
+//How To Play Instruction Window
+var howToPlay = document.getElementById('how-to-play');
+var instruction = document.getElementById('instruction-window');
+var exitButton = document.getElementById('exit-instruction');
+
+howToPlay.addEventListener('click', gameInstructionWindow);
+exitButton.addEventListener('click', exitGameInstruction);
+
+function gameInstructionWindow() {
+  instruction.style.display = 'block';
+}
+function exitGameInstruction(){
+  instruction.style.display = 'none';
+}
