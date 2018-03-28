@@ -85,6 +85,16 @@ header {
   opacity:.5;
 }
 
+#playerTrack{
+  background-color: #1d1fb1;
+  float:left;
+}
+
+#computerTrack{
+  background-color: #1eff00;
+  float:right;
+}
+
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
 
 .playrack{

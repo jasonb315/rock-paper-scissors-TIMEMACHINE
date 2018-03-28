@@ -167,12 +167,15 @@ function computerDecision() {
   var computerValue = Math.random();
   if (computerValue < .33) {
     var computerSelectedChoice = 'rock';
+    computerrock ('computerTrackImg');
 
   } else if (computerValue > .67) {
     computerSelectedChoice = 'paper';
+    computerpaper ('computerTrackImg');
 
   } else {
     computerSelectedChoice = 'scissors';
+    computerscissors ('computerTrackImg');
   }
   computerChoice = computerSelectedChoice;
 }
@@ -191,6 +194,7 @@ function computerCannibalCalculation() {
 }
 
 function playerSelRock() {
+  playerrock ('playerTrackImg');
   computerDecision();
 
   if (timeWarp === true) {
@@ -209,6 +213,7 @@ function playerSelRock() {
 }
 
 function playerSelPaper() {
+  playerpaper ('playerTrackImg');
   computerDecision();
 
   if (timeWarp === true) {
@@ -229,6 +234,7 @@ function playerSelPaper() {
 }
 
 function playerSelScissors() {
+  playerscissors ('playerTrackImg');
   computerDecision();
 
   if (timeWarp === true) {
@@ -245,6 +251,41 @@ function playerSelScissors() {
   computerPrevious = computerChoice;
   triggerGame();
 }
+//////////////////////////////////////////////////////////
+function playerrock (myImg){
+  document.getElementById(myImg).src = '../img/ROCKplay.gif';
+}
+
+function playerpaper (myImg){
+  document.getElementById(myImg).src = '../img/PAPERplay.gif';
+}
+
+function playerscissors (myImg){
+  document.getElementById(myImg).src = '../img/SCISSORplay.gif';
+}
+//////////
+function computerrock (myImg2){
+  document.getElementById(myImg2).src = '../img/ROCKplay.gif';
+}
+
+function computerpaper (myImg2){
+  document.getElementById(myImg2).src = '../img/PAPERplay.gif';
+}
+
+function computerscissors (myImg2){
+  document.getElementById(myImg2).src = '../img/SCISSORplay.gif';
+}
+
+//////////////////////////////////////////////////////////////////////
+var battleRack = document.getElementById('battleRack');
+var playerHand = document.getElementById('computerTrack');
+
+
+var playerTrack = document.getElementById('playerTrack');
+function displayPlayerHand(){
+  
+}
+
 
 triggerGame();
 
