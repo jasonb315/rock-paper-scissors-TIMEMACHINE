@@ -290,8 +290,6 @@ function playerSelScissors() {
   computerPrevious = computerChoice;
   triggerGame();
 }
-<<<<<<< HEAD
-=======
 //////////////////////////////////////////////////////////
 function playerrock (myImg){
   document.getElementById(myImg).src = '../img/ROCKplay.gif';
@@ -331,7 +329,6 @@ function displayPlayerHand(){
   
 }
 
->>>>>>> workbranch
 
 triggerGame();
 
