@@ -69,6 +69,8 @@ header {
 
 #gamemid{
   height:60vh;
+  background-color: #ff3c00;
+  opacity:.5;
 }
 
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
