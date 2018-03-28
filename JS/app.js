@@ -113,6 +113,11 @@ function win() {
   winStrk++;
   console.log('round ' + round);
   console.log('WIN WIN WIN');
+
+  if (timeWarp){
+    timeWarp = false;
+    winStrk = 0;
+  };
 }
 
 function tie() {
@@ -126,10 +131,12 @@ function tie() {
     computerCannibalActivation = false;
     computerCannibalTurn = 0;
     lose();
-  } else {
-    // console.log('game tie, no cannonballs ' + round)
-  }
-}
+  } else if (timeWarp){
+    timeWarp = false;
+    winStrk = 0;
+  };
+
+};
 
 
 function lose() {
@@ -145,6 +152,9 @@ function lose() {
   if (lives === 0) {
     alert('You\'re done!');
     window.location.href = '../index.html';
+  }
+  if (timeWarp) {
+    timeWarp = false;
   }
   winStrk = 0;
 }
@@ -188,7 +198,6 @@ function playerSelRock() {
     console.log('before change: ' + selectChoice);
     selectChoice = computerPrevious;
     console.log('after change: ' + selectChoice);
-    timeWarp = false;
   }
   // console.log('player: rock')
   if (selectChoice === 'scissors') {
@@ -209,7 +218,6 @@ function playerSelPaper() {
     console.log('before change: ' + selectChoice);
     selectChoice = computerPrevious;
     console.log('after change: ' + selectChoice);
-    timeWarp = false;
   }
   // console.log('player: paper')
   if (selectChoice === 'scissors') {
