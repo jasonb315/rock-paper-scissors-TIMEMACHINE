@@ -9,8 +9,59 @@ header {
   background-color: blue;
 }
 
+#namecard{
+  height: 100%;
+  line-height: 100%;
+  width:25%;
+  margin-left:50px;
+  background-color: blueviolet;
+  font-size: 35px;
+  color: goldenrod;
+  border: 3px solid goldenrod;
+  display:inline-block;
+}
+
+#name{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+#computercard{
+  height: 100%;
+  line-height: 100%;
+  width:25%;
+  margin-right:50px;
+  background-color: blueviolet;
+  font-size: 35px;
+  color: goldenrod;
+  border: 3px solid goldenrod;
+  float:right;
+}
+
+#computer{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+#roundcard{
+  margin: auto;
+  width: 30%;
+  display:inline-block;
+  border: 3px solid goldenrod;
+}
+
+#rounddiv{
+  background-color: deepskyblue;
+}
+
+#roundnumberdiv{
+  background-color: black;
+}
+
 #gamemid{
-  height:30vh;
+  height:50vh;
 }
 
 #selections {
@@ -72,10 +123,6 @@ header {
 #scissors{
   width:80%;
 }
-
-/* #time-machine{
-  width:20%
-} */
 
 .modifier{
   background-color: red;
