@@ -2,15 +2,22 @@
 
 var round = 0;
 var lives = 500;
+
+//canibal variables
 var cannibalTurn = 0;
 var cannibalActivate = false;
+
+//time machine variables
+var winStrk = 0;
+var timeMachineUsable = false;
+var timeWarp = false;
+
+//computer variables
 var computerPrevious = '';
-var selectChoice = '';
-var playerPrevious = '';
+var computerChoice = '';
 // Computer modifier variables
 var computerCannibalActivation = false;
 var computerCannibalTurn = 0;
-
 
 
 // var playerChoice = ;
@@ -34,8 +41,8 @@ playerTM.checked = false;
 
 
 //Cannibal Modifier
-function cannibalIdentifier(){
-  if(cannibalTurn > 3){
+function cannibalIdentifier() {
+  if (cannibalTurn > 3) {
     playerCannibal.style.opacity = '1';
     // console.log('player cannibal event listener is activated');
     playerCannibal.addEventListener('click', activateCannibal);
@@ -50,7 +57,7 @@ function cannibalIdentifier(){
 
 }
 
-function activateCannibal(){
+function activateCannibal() {
   // console.log('player cannibal is being used');
   cannibalActivate = true;
 }
@@ -60,13 +67,9 @@ playerPaper.addEventListener('click', playerSelPaper);
 playerScissors.addEventListener('click', playerSelScissors);
 
 
-
-
-var winStrk = 0;
-var timeMachineTurn = 0;
 //when used, winStrk =0
-function timeMachineIdentifier(){
-  if(winStrk >= 2){
+function timeMachineIdentifier() {
+  if (timeMachineUsable) {
     playerTM.style.opacity = '1';
     // console.log('player cannibal event listener is activated');
     playerTM.addEventListener('click', activateTimeMachine);
@@ -80,19 +83,20 @@ function timeMachineIdentifier(){
 
 }
 
-var timeWarp = false;
 
-function activateTimeMachine(){
+function activateTimeMachine() {
   // console.log('player TIME MACHINE is being activated');
   timeWarp = true;
+  timeMachineUsable = false;
+  winStrk = 0;
   // console.log('computerprevios ' + computerPrevious);
 }
 
-function triggerGame(){
-// console.log('__________' + round)
+function triggerGame() {
+  // console.log('__________' + round)
   if (lives > 0) {
     console.log('winS: ' + winStrk);
-    console.log('selectChoice ' + selectChoice);
+    console.log('computerChoice ' + computerChoice);
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();
@@ -105,23 +109,31 @@ function triggerGame(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function win() {
-  if(cannibalActivate === true){
+  if (cannibalActivate === true) {
     cannibalActivate = false;
     cannibalTurn = 0;
   }
   round++;
+  // if ()
   winStrk++;
+
+  if (winStrk >= 2) {
+    timeMachineUsable = true;
+  }
+  // if (timeMachineUsable) {
+  //   winStrk = 0;
+  // }
   console.log('round ' + round);
   console.log('WIN WIN WIN');
 }
 
 function tie() {
-  if(cannibalActivate === true && computerCannibalActivation === false){
+  if (cannibalActivate === true && computerCannibalActivation === false) {
     // console.log('player activate cannibal, player win');
     cannibalActivate = false;
     cannibalTurn = 0;
     win();
-  } else if (cannibalActivate === false && computerCannibalActivation === true){
+  } else if (cannibalActivate === false && computerCannibalActivation === true) {
     // console.log('computer activated cannibal, player lose');
     computerCannibalActivation = false;
     computerCannibalTurn = 0;
@@ -138,7 +150,7 @@ function lose() {
   round++;
   // console.log('round ' + round);
   // console.log('lives left: ' + lives);
-  if(cannibalActivate === true){
+  if (cannibalActivate === true) {
     cannibalActivate = false;
     cannibalTurn = 0;
   }
@@ -146,32 +158,33 @@ function lose() {
     alert('You\'re done!');
     window.location.href = '../index.html';
   }
+
   winStrk = 0;
 }
 
 function computerDecision() {
-  var computerChoice = Math.random();
-  if (computerChoice < .33) {
-    var selectedChoice = 'rock';
+  var computerValue = Math.random();
+  if (computerValue < .33) {
+    var computerSelectedChoice = 'rock';
     console.log('computer: rock');
 
-  } else if (computerChoice > .67) {
-    selectedChoice = 'paper';
+  } else if (computerValue > .67) {
+    computerSelectedChoice = 'paper';
     console.log('computer: paper');
 
   } else {
-    selectedChoice = 'scissors';
+    computerSelectedChoice = 'scissors';
     console.log('computer: scissors');
   }
-  selectChoice = selectedChoice;
+  computerChoice = computerSelectedChoice;
 }
 
 var computerModifierRandom = Math.random();
 
-function computerCannibalCalculation(){
+function computerCannibalCalculation() {
 
 
-  if(computerCannibalTurn > 3 && computerModifierRandom > .25){
+  if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
     // console.log('comp used cannonball');
@@ -184,65 +197,65 @@ function computerCannibalCalculation(){
 function playerSelRock() {
   computerDecision();
 
-  if(timeWarp === true){
-    console.log('before change: ' + selectChoice);
-    selectChoice = computerPrevious;
-    console.log('after change: ' + selectChoice);
+  if (timeWarp === true) {
+    console.log('before change: ' + computerChoice);
+    computerChoice = computerPrevious;
+    console.log('after change: ' + computerChoice);
     timeWarp = false;
   }
   // console.log('player: rock')
-  if (selectChoice === 'scissors') {
+  if (computerChoice === 'scissors') {
     win();
-  } else if (selectChoice === 'paper') {
+  } else if (computerChoice === 'paper') {
     lose();
-  } else if (selectChoice === 'rock') {
+  } else if (computerChoice === 'rock') {
     tie();
   }
-  computerPrevious = selectChoice;
+  computerPrevious = computerChoice;
   triggerGame();
 }
 
 function playerSelPaper() {
   computerDecision();
 
-  if(timeWarp === true){
-    console.log('before change: ' + selectChoice);
-    selectChoice = computerPrevious;
-    console.log('after change: ' + selectChoice);
+  if (timeWarp === true) {
+    console.log('before change: ' + computerChoice);
+    computerChoice = computerPrevious;
+    console.log('after change: ' + computerChoice);
     timeWarp = false;
   }
   // console.log('player: paper')
-  if (selectChoice === 'scissors') {
+  if (computerChoice === 'scissors') {
     lose();
 
-  } else if (selectChoice === 'paper') {
+  } else if (computerChoice === 'paper') {
     tie();
 
-  } else if (selectChoice === 'rock') {
+  } else if (computerChoice === 'rock') {
     win();
   }
-  computerPrevious = selectChoice;
+  computerPrevious = computerChoice;
   triggerGame();
 }
 
 function playerSelScissors() {
   computerDecision();
 
-  if(timeWarp === true){
-    console.log('before change: ' + selectChoice);
-    selectChoice = computerPrevious;
-    console.log('after change: ' + selectChoice);
+  if (timeWarp === true) {
+    console.log('before change: ' + computerChoice);
+    computerChoice = computerPrevious;
+    console.log('after change: ' + computerChoice);
     timeWarp = false;
   }
   // console.log('player: scissors')
-  if (selectChoice === 'scissors') {
+  if (computerChoice === 'scissors') {
     tie();
-  } else if (selectChoice === 'paper') {
+  } else if (computerChoice === 'paper') {
     win();
-  } else if (selectChoice === 'rock') {
+  } else if (computerChoice === 'rock') {
     lose();
   }
-  computerPrevious = selectChoice;
+  computerPrevious = computerChoice;
   triggerGame();
 }
 
@@ -260,6 +273,6 @@ exitButton.addEventListener('click', exitGameInstruction);
 function gameInstructionWindow() {
   instruction.style.display = 'block';
 }
-function exitGameInstruction(){
+function exitGameInstruction() {
   instruction.style.display = 'none';
 }
