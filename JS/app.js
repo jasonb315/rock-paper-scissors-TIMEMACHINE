@@ -1,7 +1,7 @@
 'use strict';
 
 var round = 0;
-var lives = 500;
+var lives = 5;
 
 //canibal variables
 var cannibalTurn = 0;
@@ -102,6 +102,7 @@ function triggerGame() {
     timeMachineIdentifier();
   } else {
     alert('You\'re done!');
+    gameOver();
     window.location.href = '../index.html';
   }
 }
@@ -154,13 +155,24 @@ function lose() {
     cannibalActivate = false;
     cannibalTurn = 0;
   }
-  if (lives === 0) {
-    alert('You\'re done!');
-    window.location.href = '../index.html';
-  }
-
   winStrk = 0;
 }
+
+function gameOver() {
+  console.log(round);
+  var loadLocalHighScore = localStorage.getItem('High-Score', loadLocalHighScore);
+  if (loadLocalHighScore && loadLocalHighScore.length) {
+    loadLocalHighScore = JSON.parse(loadLocalHighScore);
+  }
+  if (loadLocalHighScore > round) {
+    loadLocalHighScore = JSON.stringify(loadLocalHighScore);
+    loadLocalHighScore = localStorage.setItem('High-Score', loadLocalHighScore);
+  } else {
+    var highscore = JSON.stringify(round);
+    var toLocalStorage = localStorage.setItem('High-Score', highscore);
+  }
+}
+
 
 function computerDecision() {
   var computerValue = Math.random();
