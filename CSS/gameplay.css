@@ -32,6 +32,7 @@ header {
 #name{
   /* display: inline-block; */
   vertical-align: 30px;
+  margin: auto 8%;
   /* line-height: -30px; */
 }
 
@@ -245,6 +246,20 @@ header {
   transform: scale(1);
 }
 
+#round {
+  font-size: 1.7em;
+  padding: 15px 0 0 10px;
+}
+
+#roundnumberdiv {
+  text-align: center;
+}
+
+#howtoplaydiv {
+  float: right;
+}
+
+
 
 /* #heartrack{
   height: 10vh;
@@ -325,3 +340,4 @@ button:hover{
 .playicon {
   width: 80px;
 }
+
