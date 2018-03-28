@@ -1,7 +1,7 @@
 'use strict';
 
 var round = 0;
-var lives = 500;
+var lives = 50;
 
 //canibal variables
 var cannibalTurn = 0;
@@ -30,6 +30,14 @@ var playerTM = document.getElementById('time-machine');
 
 playerCannibal.checked = false;
 playerTM.checked = false;
+
+//display user name
+var getUserName = localStorage.getItem('TM-username');
+var userName = JSON.parse(getUserName);
+
+var userNameHere = document.getElementById('name');
+userNameHere.textContent = userName;
+
 
 //Time Machine
 //Create array/variable with previous hands
@@ -72,7 +80,6 @@ function timeMachineIdentifier() {
     playerTM.style.opacity = '0.5';
     playerTM.removeEventListener('click', activateTimeMachine);
   }
-
 }
 
 
@@ -84,6 +91,10 @@ function activateTimeMachine() {
 
 function triggerGame() {
   if (lives > 0) {
+    var displayRound = round + 1;
+    var displayElement = document.getElementById('roundNumber');
+    displayElement.textContent = displayRound;
+
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();

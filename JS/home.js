@@ -17,9 +17,15 @@ var howToPlay = document.getElementById('instruction-window');
 var instruction= document.getElementById('howtoplay-window');
 
 
-// Load saved user name from local Storage
+// Load user name and high score from local Storage
 var loadLocalStorage = localStorage.getItem('TM-username');
 var savedUserName = JSON.parse(loadLocalStorage);
+
+var loadLocalHighScore = localStorage.getItem('High-Score', loadLocalHighScore);
+var savedHighScore = JSON.parse(loadLocalHighScore);
+
+var playerHighScore = document.getElementById('highest-round');
+playerHighScore.textContent = savedHighScore;
 
 if (typeof (savedUserName) === 'object') {
   playButton.addEventListener('click', newPlayer);
@@ -90,8 +96,8 @@ function gameInstructionWindow() {
 function goToGamePlay() {
   event.preventDefault();
 
-  // var useenInstruction = JSON.stringify(true);
-  // var toLocalStorage = localStorage.setItem('TM-instruction-read', useenInstruction);
+  var useenInstruction = JSON.stringify(true);
+  var toLocalStorage = localStorage.setItem('TM-instruction-read', useenInstruction);
 
   howToPlay.style.display = 'none';
   window.location.href='HTML/gameplay.html';
