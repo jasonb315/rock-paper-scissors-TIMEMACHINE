@@ -21,6 +21,7 @@ var computerCannibalTurn = 0;
 
 
 // var playerChoice = ;
+// console.log(computerChoice);
 var playerRock = document.getElementById('rock');
 var playerPaper = document.getElementById('paper');
 var playerScissors = document.getElementById('scissors');
@@ -43,17 +44,21 @@ playerTM.checked = false;
 function cannibalIdentifier() {
   if (cannibalTurn > 3) {
     playerCannibal.style.opacity = '1';
+    // console.log('player cannibal event listener is activated');
     playerCannibal.addEventListener('click', activateCannibal);
 
   } else {
     playerCannibal.style.opacity = '0.5';
+    // console.log('cannibal is deactivated');
     playerCannibal.removeEventListener('click', activateCannibal);
     cannibalTurn++;
+    // console.log('cannibal turn', cannibalTurn);
   }
 
 }
 
 function activateCannibal() {
+  // console.log('player cannibal is being used');
   cannibalActivate = true;
 }
 
@@ -108,6 +113,11 @@ function win() {
   if (winStrk >= 2) {
     timeMachineUsable = true;
   }
+  // if (timeMachineUsable) {
+  //   winStrk = 0;
+  // }
+  console.log('round ' + round);
+  console.log('WIN WIN WIN');
 }
 
 function tie() {
@@ -167,12 +177,15 @@ function computerDecision() {
   var computerValue = Math.random();
   if (computerValue < .33) {
     var computerSelectedChoice = 'rock';
+    console.log('computer: rock');
 
   } else if (computerValue > .67) {
     computerSelectedChoice = 'paper';
+    console.log('computer: paper');
 
   } else {
     computerSelectedChoice = 'scissors';
+    console.log('computer: scissors');
   }
   computerChoice = computerSelectedChoice;
 }
@@ -185,9 +198,11 @@ function computerCannibalCalculation() {
   if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
+    // console.log('comp used cannonball');
   } else {
     computerCannibalTurn++;
   }
+  // console.log('computerCannibal turn ', computerCannibalTurn);
 }
 
 function playerSelRock() {
