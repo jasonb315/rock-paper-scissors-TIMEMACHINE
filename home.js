@@ -11,8 +11,6 @@ if(typeof(savedUserName) === 'object'){
   playButton.addEventListener('click', oldPlayer);
 }
 
-
-
 function newPlayer(){
 
   var userName = prompt('Please Enter Your Name');
