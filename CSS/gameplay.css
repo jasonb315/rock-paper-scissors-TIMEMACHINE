@@ -1,0 +1,182 @@
+#gameplayBody {
+  /* height: 90vh; */
+  background-size: 100%;
+  background-image: url("../img/GAMEPLAYbg.gif");
+}
+
+header {
+  height:10vh;
+  background-color: blue;
+}
+
+#namecard{
+  height: 100%;
+  line-height: 100%;
+  width:25%;
+  margin-left:50px;
+  background-color: blueviolet;
+  font-size: 35px;
+  color: goldenrod;
+  border: 3px solid goldenrod;
+  display:inline-block;
+}
+
+#name{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+#computercard{
+  height: 100%;
+  line-height: 100%;
+  width:25%;
+  margin-right:50px;
+  background-color: blueviolet;
+  font-size: 35px;
+  color: goldenrod;
+  border: 3px solid goldenrod;
+  float:right;
+}
+
+#computer{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+#roundcard{
+  margin: auto;
+  width: 30%;
+  display:inline-block;
+  border: 3px solid goldenrod;
+}
+
+#rounddiv{
+  background-color: deepskyblue;
+}
+
+#roundnumberdiv{
+  background-color: black;
+}
+
+#gamemid{
+  height:50vh;
+}
+
+#selections {
+  width: 40vw;
+  height:25vh;
+  float: left;
+  margin-left:50px;
+  background-color: black;
+  border-radius: 25px;
+  /* opacity: 0.5; */
+}
+
+.selectdiv {
+  display:inline-block;
+  width:32%;
+  /* opacity: 1; */
+}
+
+#rock:hover {
+  transform: scale(1.1);
+}
+
+#paper:hover {
+  transform: scale(1.1);
+}
+
+#scissors:hover {
+  transform: scale(1.1);
+}
+
+#time-machine:hover{
+  transform: scale(1.1);
+}
+
+#time-machine:active{
+  transform: scale(1);
+}
+
+#rock:active{
+  transform: scale(1);
+}
+
+#paper:active {
+  transform: scale(1);
+}
+
+#scissors:active {
+  transform: scale(1);
+}
+
+#rock {
+  width:80%;
+}
+
+#paper{
+  width:80%;
+}
+
+#scissors{
+  width:80%;
+}
+
+.modifier{
+  background-color: red;
+}
+
+#heartrack{
+  height: 10vh;
+  width: 25%;
+  float:right;
+  background-color: aqua;
+}
+
+
+
+
+
+
+
+
+
+.instruction {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: blue;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
