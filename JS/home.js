@@ -90,8 +90,8 @@ function gameInstructionWindow() {
 function goToGamePlay() {
   event.preventDefault();
 
-  var useenInstruction = JSON.stringify(true);
-  var toLocalStorage = localStorage.setItem('TM-instruction-read', useenInstruction);
+  // var useenInstruction = JSON.stringify(true);
+  // var toLocalStorage = localStorage.setItem('TM-instruction-read', useenInstruction);
 
   howToPlay.style.display = 'none';
   window.location.href='HTML/gameplay.html';
