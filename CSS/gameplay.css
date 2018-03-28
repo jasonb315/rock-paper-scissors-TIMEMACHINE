@@ -100,7 +100,7 @@ header {
   margin-left:200px;
   background-color: #081124;
   border: 3px solid #FFE20D;
-  border-radius: 25px;
+  border-radius: 70px;
   /* opacity: 0.5; */
 }
 
@@ -118,12 +118,16 @@ header {
   margin-left:50px;
   background-color: #081124;
   border: 3px solid rgb(255, 150, 13);
-  border-radius: 25px;
+  border-radius: 60px;
   color: #FFE20D;
 }
 
 #modify{
-  margin-left:25px;
+  margin-left:50px;
+  font-size:15px;
+  font-weight:bold;
+  /* text-align: center; */
+  opacity:.5;
 }
 
 .selectdivmod {
