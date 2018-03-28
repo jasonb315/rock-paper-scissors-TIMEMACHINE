@@ -1,7 +1,7 @@
 'use strict';
 
 var round = 0;
-var lives = 500;
+var lives = 50;
 
 //canibal variables
 var cannibalTurn = 0;
@@ -31,6 +31,14 @@ var playerTM = document.getElementById('time-machine');
 
 playerCannibal.checked = false;
 playerTM.checked = false;
+
+//display user name
+var getUserName = localStorage.getItem('TM-username');
+var userName = JSON.parse(getUserName);
+
+var userNameHere = document.getElementById('name');
+userNameHere.textContent = userName;
+
 
 //Time Machine
 //Create array/variable with previous hands
@@ -79,7 +87,6 @@ function timeMachineIdentifier() {
     // console.log('cannibal is deactivated');
     playerTM.removeEventListener('click', activateTimeMachine);
   }
-
 }
 
 
@@ -94,8 +101,10 @@ function activateTimeMachine() {
 function triggerGame() {
   // console.log('__________' + round)
   if (lives > 0) {
-    console.log('winS: ' + winStrk);
-    console.log('computerChoice ' + computerChoice);
+    var displayRound = round + 1;
+    var displayElement = document.getElementById('roundNumber');
+    displayElement.textContent = displayRound;
+
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();
@@ -120,11 +129,7 @@ function win() {
   if (winStrk >= 2) {
     timeMachineUsable = true;
   }
-  // if (timeMachineUsable) {
-  //   winStrk = 0;
-  // }
-  console.log('round ' + round);
-  console.log('WIN WIN WIN');
+  display ("../img/WIN.gif");
 }
 
 function tie() {
@@ -148,8 +153,10 @@ function tie() {
     cannibalTurn = 0;
     computerCannibalTurn = 0;
     console.log('double cannibal');
+    display ("../img/TIE.gif");//tie img
   } else {
     console.log('no cannibals');
+    display ("../img/TIE.gif");//tie img
     triggerGame();
   }
   // console.log('game tie, no cannonballs ' + round)
@@ -168,6 +175,7 @@ function lose() {
     cannibalTurn = 0;
   }
   winStrk = 0;
+  display ("../img/LOSE.gif");//lose img
 }
 
 function gameOver() {
@@ -282,6 +290,48 @@ function playerSelScissors() {
   computerPrevious = computerChoice;
   triggerGame();
 }
+<<<<<<< HEAD
+=======
+//////////////////////////////////////////////////////////
+function playerrock (myImg){
+  document.getElementById(myImg).src = '../img/ROCKplay.gif';
+}
+
+function playerpaper (myImg){
+  document.getElementById(myImg).src = '../img/PAPERplay.gif';
+}
+
+function playerscissors (myImg){
+  document.getElementById(myImg).src = '../img/SCISSORplay.gif';
+}
+//////////
+function computerrock (myImg2){
+  document.getElementById(myImg2).src = '../img/ROCKcomp.gif';
+}
+
+function computerpaper (myImg2){
+  document.getElementById(myImg2).src = '../img/PAPERcomp.gif';
+}
+
+function computerscissors (myImg2){
+  document.getElementById(myImg2).src = '../img/SCISSORcomp.gif';
+}
+
+function display (outcome){
+  document.getElementById('outcomeTrackImg').src = outcome;
+}
+
+//////////////////////////////////////////////////////////////////////
+var battleRack = document.getElementById('battleRack');
+var playerHand = document.getElementById('computerTrack');
+
+
+var playerTrack = document.getElementById('playerTrack');
+function displayPlayerHand(){
+  
+}
+
+>>>>>>> workbranch
 
 triggerGame();
 

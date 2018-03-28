@@ -32,6 +32,7 @@ header {
 #name{
   /* display: inline-block; */
   vertical-align: 30px;
+  margin: auto 8%;
   /* line-height: -30px; */
 }
 
@@ -82,7 +83,7 @@ header {
 #gamemid{
   height:60vh;
   background-color: #830f49;
-  opacity:.5;
+  /* opacity:.5; */
 }
 
 #spacermid{
@@ -102,10 +103,14 @@ header {
 }
 
 #outcomeTrack{
-  background-color: #f8fc0e;
+  background-color: black;
   /* margin:auto; */
   display:inline-block;
   width:21%;
+}
+
+#outcomeTrackImg{
+  width:100%;
 }
 
 #outcomeTrackImg{
@@ -135,7 +140,7 @@ header {
   width: 390px;
   height:130px;
   display:inline-block;
-  margin-left:200px;
+  margin-left:250px;
   background-color: #081124;
   border: 3px solid #FFE20D;
   border-radius: 70px;
@@ -153,9 +158,9 @@ header {
   width: 240px;
   height:120px;
   display:inline-block;
-  margin-left:50px;
+  margin-left:10px;
   background-color: #081124;
-  border: 3px solid rgb(255, 150, 13);
+  border: 3px solid #FFE20D;
   border-radius: 60px;
   color: #FFE20D;
 }
@@ -245,6 +250,20 @@ header {
   transform: scale(1);
 }
 
+#round {
+  font-size: 1.7em;
+  padding: 15px 0 0 10px;
+}
+
+#roundnumberdiv {
+  text-align: center;
+}
+
+#howtoplaydiv {
+  float: right;
+}
+
+
 
 /* #heartrack{
   height: 10vh;
@@ -325,3 +344,4 @@ button:hover{
 .playicon {
   width: 80px;
 }
+
