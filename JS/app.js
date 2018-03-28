@@ -108,6 +108,7 @@ function win() {
   if (winStrk >= 2) {
     timeMachineUsable = true;
   }
+  display ("../img/ROCKplay.gif");
 }
 
 function tie() {
@@ -129,8 +130,10 @@ function tie() {
     cannibalTurn = 0;
     computerCannibalTurn = 0;
     console.log('double cannibal');
+    display ("../img/PAPERplay.gif");//tie img
   } else {
     console.log('no cannibals');
+    display ("../img/PAPERplay.gif");//tie img
     triggerGame();
   }
 }
@@ -145,6 +148,7 @@ function lose() {
     cannibalTurn = 0;
   }
   winStrk = 0;
+  display ("../img/SCISSORplay.gif");//lose img
 }
 
 function gameOver() {
@@ -274,6 +278,10 @@ function computerpaper (myImg2){
 
 function computerscissors (myImg2){
   document.getElementById(myImg2).src = '../img/SCISSORplay.gif';
+}
+
+function display (outcome){
+  document.getElementById('outcomeTrackImg').src = outcome;
 }
 
 //////////////////////////////////////////////////////////////////////
