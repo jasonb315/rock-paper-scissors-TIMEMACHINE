@@ -22,10 +22,17 @@ header {
   border-radius: 10px;
 }
 
+#playername,
+#computername {
+  margin-left:30px;
+  height:100%;
+  display:inline-block;
+}
+
 #name{
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 60px;
+  /* display: inline-block; */
+  vertical-align: 30px;
+  /* line-height: -30px; */
 }
 
 #computercard{
@@ -67,8 +74,15 @@ header {
   background-color: #081124;
 }
 
+#roundNumber{
+  color:#FFE20D;
+  font-size: 50px;
+}
+
 #gamemid{
   height:60vh;
+  background-color: #ff3c00;
+  opacity:.5;
 }
 
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
@@ -80,11 +94,11 @@ header {
 }
 
 #mainselections {
-  width: 30%;
-  height:100%;
+  width: 390px;
+  height:130px;
   display:inline-block;
-  margin-left:50px;
-  background-color: #ff3c00;
+  margin-left:200px;
+  background-color: #081124;
   border: 3px solid #FFE20D;
   border-radius: 25px;
   /* opacity: 0.5; */
@@ -94,23 +108,30 @@ header {
   display:inline-block;
   width:32%;
   /* opacity: 1; */
+  /* background-color: #be1a1a; */
 }
 
 #modcard {
-  width: 20%;
-  height:90%;
+  width: 240px;
+  height:120px;
   display:inline-block;
-  /* margin-left:50px; */
-  background-color: #be1a1a;
+  margin-left:50px;
+  background-color: #081124;
   border: 3px solid rgb(255, 150, 13);
   border-radius: 25px;
+  color: #FFE20D;
+}
+
+#modify{
+  margin-left:25px;
 }
 
 .selectdivmod {
   display:inline-block;
   width:40%;
-  height:100%;
+  /* height:100%; */
   /* opacity: 1; */
+  /* background-color: #be1a1a; */
 }
 
 #modcard img {
@@ -129,13 +150,18 @@ header {
   width:100%;
 }
 
-/* #cannibal{
+#cannibal{
   width:100%;
 }
 
 #time-machine {
   width:100%;
-} */
+  margin-left:20px;
+}
+
+#cannibal{
+ margin-left:20px;
+}
 
 #rock:hover {
   transform: scale(1.1);
@@ -169,6 +195,13 @@ header {
   transform: scale(1);
 }
 
+#cannibal:hover {
+  transform: scale(1.1);
+}
+
+#cannibal:active {
+  transform: scale(1);
+}
 
 
 /* #heartrack{
