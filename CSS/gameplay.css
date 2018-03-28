@@ -82,8 +82,46 @@ header {
 
 #gamemid{
   height:60vh;
-  background-color: #ff3c00;
+  background-color: #830f49;
   opacity:.5;
+}
+
+#spacermid{
+  height:15vh;
+  background-color: orange;
+}
+
+#playerTrack{
+  background-color: #1d1fb1;
+  /* float:left; */
+  display:inline-block;
+  width:39%;
+}
+
+#playerTrackImg{
+  float:right;
+}
+
+#outcomeTrack{
+  background-color: #f8fc0e;
+  /* margin:auto; */
+  display:inline-block;
+  width:21%;
+}
+
+#outcomeTrackImg{
+  display:block;
+  margin: 0 auto;
+}
+
+#computerTrack{
+  background-color: #1eff00;
+  display:inline-block;
+  width:39%;
+}
+
+#computerTrackImg{
+  float:left;
 }
 
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
