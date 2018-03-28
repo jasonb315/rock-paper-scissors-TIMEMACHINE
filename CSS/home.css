@@ -1,8 +1,4 @@
 
-
-
-
-
 /* The Modal (background) */
 .new-user, .old-user, .instruction {
   display: none; /* Hidden by default */
@@ -14,17 +10,22 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  margin: auto;
+  background-color: rgb(0,0,0,0,6); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+#instruction-window{
+  padding-top: 0
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: blue;
+  background-color: #102347;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  padding: 3em 2em;
+  border: 3px solid yellow;
+  width: 60%;
 }
 
 /* The Close Button */
@@ -40,4 +41,43 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: yellow;
+  margin-bottom: 1em;
+}
+p{
+  font-size: 35px;
+  color: yellow;
+  font-family: 'Caveat Brush', cursive;
+  margin-bottom: 1em;
+}
+
+input {
+  margin: 2em 40% 2em 30%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding: 1em;
+}
+
+button {
+  text-align: center;
+  color: white;
+  border: 5px solid yellow;
+  background-color: #081124;
+  margin: 1em 45% 0 45%;
+  padding: .8em 1.5em;
+  font-size: 15px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+button:hover{
+  cursor: pointer;
+  border: 5px solid red;
 }
