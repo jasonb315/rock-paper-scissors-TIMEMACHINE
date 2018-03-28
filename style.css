@@ -27,6 +27,17 @@ Body{
 #title-img{
   margin:auto;
   width:100%;
+  transform:translate();
+}
+
+#title-img:nth-of-type(1){
+    animation: size 3s infinite;
+}
+
+@keyframes size {
+  0%  {left:42%;top:50%;width:100%;}
+  50% {left:58%;top:50%;width:102%;}
+  100%{left:42%;top:50%;width:100%;}
 }
 
 #playsection{
@@ -44,17 +55,12 @@ Body{
 
 #play-img{
   width:100%;
-  /* margin:auto; */
-  /* height: 100px;
-  width: 300px; */
-  /* margin: 15px 0; */
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
   -o-transition: all .2s ease;
 }
 
 #play-img:hover {
-  /* height: 133px; */
   width: 150%;
   margin-left: -60px;
 }
