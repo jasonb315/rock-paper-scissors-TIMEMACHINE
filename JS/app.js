@@ -3,11 +3,19 @@
 var round = 0;
 var lives = 10;
 
+/////FEEDBACKRACK
 
 
+var feedBackRackL = document.getElementById('feedBackRackL');
+feedBackRackL.textContent = 'FIGHT!!';
+var feedBackRackR = document.getElementById('feedBackRackR');
+feedBackRackR.textContent = 'FIGHT!!';
+
+
+
+/////
 var livesCounter = document.getElementById('livesCounter');
 livesCounter.textContent = lives;
-
 
 //canibal variables
 var cannibalTurn = 0;
@@ -96,13 +104,14 @@ function cannibalIdentifier() {
 function activateCannibal() {
   cannibalActivate = true;
   cannibalUse++;
+  feedBackRackL.textContent = 'CANNIBAL ACTIVE!';
+  feedBackRackR.textContent = '';
   cannibalFreqMod();
 }
 
 playerRock.addEventListener('click', playerSelRock);
 playerPaper.addEventListener('click', playerSelPaper);
 playerScissors.addEventListener('click', playerSelScissors);
-
 
 //when used, winStrk =0
 function timeMachineIdentifier() {
@@ -116,11 +125,11 @@ function timeMachineIdentifier() {
   }
 }
 
-
 function activateTimeMachine() {
   timeWarp = true;
   timeMachineUsable = false;
   winStrk = 0;
+  feedBackRackL.textContent = '1.21 gigawatts!';
 }
 
 function triggerGame() {
@@ -130,8 +139,6 @@ function triggerGame() {
     displayElement.textContent = displayRound;
     console.log(computerPrevious);
 
-
-  
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();
@@ -146,18 +153,28 @@ function triggerGame() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function win() {
+
+  feedBackRackL.textContent = '\"haHA!\"';
+  feedBackRackR.textContent = '\"BZZZz\"';
+
+ if (winStrk >= 2) {
+    timeMachineUsable = true;
+    feedBackRackL.textContent = 'WINNING STREAK!!';
+  }
+
   if (cannibalActivate === true) {
     lives++;
     livesCounter.textContent = lives;
     cannibalActivate = false;
     cannibalTurn = 0;
+    feedBackRackL.textContent = 'NOM NOM: LIVES +1';
   }
+
   round++;
   winStrk++;
+  
+ 
 
-  if (winStrk >= 2) {
-    timeMachineUsable = true;
-  }
   display("../img/WIN.gif");
 }
 
@@ -180,10 +197,13 @@ function tie() {
     computerCannibalActivation = false;
     cannibalTurn = 0;
     computerCannibalTurn = 0;
-    console.log('double cannibal');
+    feedBackRackL.textContent = '\"JINX!\"';
+    feedBackRackR.textContent = '\"JINX!\"';
     display("../img/TIE.gif");//tie img
   } else {
     console.log('no cannibals');
+    feedBackRackL.textContent = '\"JINX!\"';
+    feedBackRackR.textContent = '\"JINX!\"';
     display("../img/TIE.gif");//tie img
     triggerGame();
   }
@@ -199,6 +219,8 @@ function lose() {
   }
   winStrk = 0;
   display("../img/LOSE.gif");//lose img
+  feedBackRackL.textContent = '-1 LIFE';
+  feedBackRackR.textContent = '\"haHA!\"';
 }
 
 function gameOver() {
@@ -214,6 +236,8 @@ function gameOver() {
     var highscore = JSON.stringify(round);
     var toLocalStorage = localStorage.setItem('High-Score', highscore);
   }
+  feedBackRackL.textContent = 'GAME OVER';
+  feedBackRackL.textContent = '\"EVIL TRIUMPHS!\"';
 }
 
 
