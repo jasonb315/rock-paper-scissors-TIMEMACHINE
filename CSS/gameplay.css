@@ -428,9 +428,11 @@ button:hover{
   width: 80px;
 }
 
+<<<<<<< HEAD
 #howtoplaydiv{
   opacity: .5;
 }
+=======
 /* audio  */
 audio {
   display: none;
@@ -448,3 +450,4 @@ audio {
   border: 2px solid red;
   cursor: pointer;
 }
+>>>>>>> 8909966ec0d4f4bc0919a373623a2c743095a776
