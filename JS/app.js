@@ -84,7 +84,7 @@ function cannibalFreqMod(){
     cannibalCounter = 6;
     console.log('shift up6');
 
-  };
+  }
 }
 
 //Cannibal Modifier
@@ -157,7 +157,7 @@ function win() {
   feedBackRackL.textContent = '\"haHA!\"';
   feedBackRackR.textContent = '\"BZZZz\"';
 
- if (winStrk >= 2) {
+  if (winStrk >= 2) {
     timeMachineUsable = true;
     feedBackRackL.textContent = 'WINNING STREAK!!';
   }
@@ -172,10 +172,9 @@ function win() {
 
   round++;
   winStrk++;
-  
- 
 
-  display("../img/WIN.gif");
+  display('../img/WIN.gif');
+
 }
 
 function tie() {
@@ -197,14 +196,18 @@ function tie() {
     computerCannibalActivation = false;
     cannibalTurn = 0;
     computerCannibalTurn = 0;
+
     feedBackRackL.textContent = '\"JINX!\"';
     feedBackRackR.textContent = '\"JINX!\"';
-    display("../img/TIE.gif");//tie img
+
+    display('../img/TIE.gif');//tie img
+
   } else {
     console.log('no cannibals');
     feedBackRackL.textContent = '\"JINX!\"';
     feedBackRackR.textContent = '\"JINX!\"';
-    display("../img/TIE.gif");//tie img
+    display('../img/TIE.gif');//tie img
+
     triggerGame();
   }
 }
@@ -218,9 +221,12 @@ function lose() {
     cannibalTurn = 0;
   }
   winStrk = 0;
-  display("../img/LOSE.gif");//lose img
+
+  display('../img/LOSE.gif');//lose img
+
   feedBackRackL.textContent = '-1 LIFE';
   feedBackRackR.textContent = '\"haHA!\"';
+
 }
 
 function gameOver() {
@@ -386,6 +392,7 @@ var playerHand = document.getElementById('computerTrack');
 
 
 var playerTrack = document.getElementById('playerTrack');
+
 function displayPlayerHand() {
 
 }
@@ -407,4 +414,43 @@ function gameInstructionWindow() {
 }
 function exitGameInstruction() {
   instruction.style.display = 'none';
+}
+
+// Animation
+// function animation() {
+//   document.getElementById('playerTrackImg').className('left-to-right');
+// }
+// playerRock.addEventListener('animationend', animation, false);
+
+var rockAni = document.getElementById('rock');
+var playerHand = document.getElementById('move-right');
+
+rockAni.addEventListener('mousedown', function(){
+  playerHand.style.keyframes = '';
+}, false);
+
+rockAni.addEventListener('click',function(){
+  playerHand.style.keyframes = 'shake';
+});
+
+
+
+// document.getElementById('playerTrackImg').onclick = function(){
+//   playerHand.style.keyframes = 'shake';
+// };
+
+
+//Audio Player
+var audio = document.getElementById('audio-img');
+var audioPlayer = document.getElementById('audio-player');
+audio.addEventListener('click', audioPlayMute, false);
+
+function audioPlayMute(){
+  if(audioPlayer.muted === true){
+    audioPlayer.muted = false;
+    audio.src = '../img/audio.svg';
+  } else {
+    audioPlayer.muted = true;
+    audio.src = '../img/audio.mute.svg';
+  }
 }

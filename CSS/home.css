@@ -26,7 +26,10 @@
   padding: 3em 2em;
   border: 3px solid yellow;
   width: 60%;
+ 
 }
+
+
 
 /* The Close Button */
 .close {
@@ -84,4 +87,23 @@ button:hover{
 
 .playicon {
   width: 80px;
+}
+
+
+
+/* audio  */
+audio {
+  display: none;
+}
+
+#audio-img {
+  float: right; 
+  width: 50px;
+  height: 50px;
+  margin: 3em 3em 0 0;
+}
+
+#audio-img:hover {
+  border: 2px solid red;
+  cursor: pointer;
 }

@@ -107,3 +107,33 @@ function goToGamePlay() {
 submitted.addEventListener('submit', submitter);
 playGame.addEventListener('submit', playGameNow);
 instruction.addEventListener('submit', goToGamePlay);
+
+
+// function muteAudio() {
+//   var audio = document.getElementById('audioPlayer');
+
+//   if (audio.mute == false)
+//   {
+//     document.getElementById('audioPlayer').muted = true;
+//   }
+//   else
+//   {
+//     audio.mute = true;
+//     document.getElementById('audioPlayer').muted = false;
+//   }
+// }
+// muteAudio();
+
+var audio = document.getElementById('audio-img');
+var audioPlayer = document.getElementById('audio-player');
+audio.addEventListener('click', audioPlayMute, false);
+
+function audioPlayMute(){
+  if(audioPlayer.muted === true){
+    audioPlayer.muted = false;
+    audio.src = 'img/audio.svg';
+  } else {
+    audioPlayer.muted = true;
+    audio.src = 'img/audio.mute.svg';
+  }
+}
