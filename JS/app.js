@@ -46,6 +46,7 @@ var playerTM = document.getElementById('time-machine');
 playerCannibal.checked = false;
 playerTM.checked = false;
 
+
 //display user name
 var getUserName = localStorage.getItem('TM-username');
 var userName = JSON.parse(getUserName);
@@ -57,26 +58,26 @@ var cannibalUse = 0;
 var cannibalCounter = 0;
 //take next counter, multiply it by the number of times you want it to be used, then add that to previous counter
 
-function cannibalFreqMod(){
-  if(cannibalUse <= 3){
+function cannibalFreqMod() {
+  if (cannibalUse <= 3) {
     cannibalCounter = 1;
     console.log('shift up');
   }
-  else if(cannibalUse <= 6){
+  else if (cannibalUse <= 6) {
     cannibalCounter = 2;
     console.log('shift up2');
   }
-  else if(cannibalUse <= 9){
+  else if (cannibalUse <= 9) {
     cannibalCounter = 3;
     console.log('shift up3');
 
   }
-  else if(cannibalUse <= 12){
+  else if (cannibalUse <= 12) {
     cannibalCounter = 4;
     console.log('shift up4');
 
   }
-  else if(cannibalUse <= 15){
+  else if (cannibalUse <= 15) {
     cannibalCounter = 5;
     console.log('shift up5');
 
@@ -144,9 +145,9 @@ function triggerGame() {
     timeMachineIdentifier();
 
   } else {
-    alert('You\'re done!');
     gameOver();
-    window.location.href = '../index.html';
+    gameIsOver();
+    // window.location.href = '../index.html';
   }
 }
 
@@ -406,15 +407,40 @@ var howToPlay = document.getElementById('how-to-play');
 var instruction = document.getElementById('instruction-window');
 var exitButton = document.getElementById('exit-instruction');
 
+//Exit Game window
+var gameOverWindow = document.getElementById('GO-window');
+
+var exitToHomeButton = document.getElementById('back-to-home');
+
+exitToHomeButton.addEventListener('click', exitToHome);
+
+function exitToHome() {
+  event.preventDefault();
+  window.location.href = '../index.html';
+}
+
+function gameIsOver() {
+  gameOverWindow.style.display = 'block';
+
+}
+
+gameOverWindow.style.display = 'none';
+
 howToPlay.addEventListener('click', gameInstructionWindow);
 exitButton.addEventListener('click', exitGameInstruction);
 
 function gameInstructionWindow() {
   instruction.style.display = 'block';
 }
+
 function exitGameInstruction() {
   instruction.style.display = 'none';
 }
+
+
+
+
+
 
 // Animation
 // function animation() {
@@ -422,16 +448,18 @@ function exitGameInstruction() {
 // }
 // playerRock.addEventListener('animationend', animation, false);
 
-var rockAni = document.getElementById('rock');
-var playerHand = document.getElementById('move-right');
+// var rockAni = document.getElementById('rock');
+// var moveRight = document.getElementById('move-right');
 
-rockAni.addEventListener('mousedown', function(){
+
+rockAni.addEventListener('mousedown', function () {
   playerHand.style.keyframes = '';
 }, false);
 
-rockAni.addEventListener('click',function(){
+rockAni.addEventListener('click', function () {
   playerHand.style.keyframes = 'shake';
 });
+
 
 
 
@@ -439,14 +467,36 @@ rockAni.addEventListener('click',function(){
 //   playerHand.style.keyframes = 'shake';
 // };
 
+// rockAni.addEventListener('click', rerun);
+
+// function rerun(){
+//   // event.preventDefault;
+
+//   document.getElementById('playerTrackImg').setAttribute('class', '');
+
+
+
+//   document.getElementById('playerTrackImg').setAttribute('class', 'left-to-right');
+//   // void rockAni.offsetWidth;
+// }
+
+
+
+
+
+
+
+
+
+
 
 //Audio Player
 var audio = document.getElementById('audio-img');
 var audioPlayer = document.getElementById('audio-player');
 audio.addEventListener('click', audioPlayMute, false);
 
-function audioPlayMute(){
-  if(audioPlayer.muted === true){
+function audioPlayMute() {
+  if (audioPlayer.muted === true) {
     audioPlayer.muted = false;
     audio.src = '../img/audio.svg';
   } else {
