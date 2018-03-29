@@ -3,26 +3,18 @@
 var round = 0;
 var lives = 10;
 
-/////FEEDBACKRACK
 
 
-var feedBackRackL = document.getElementById('feedBackRackL');
-feedBackRackL.textContent = 'FIGHT!!';
-var feedBackRackR = document.getElementById('feedBackRackR');
-feedBackRackR.textContent = 'FIGHT!!';
-
-
-
-/////
 var livesCounter = document.getElementById('livesCounter');
 livesCounter.textContent = lives;
+
 
 //canibal variables
 var cannibalTurn = 0;
 var cannibalActivate = false;
 
 //time machine variables
-var winStrk = 0;
+var winStrk = 0;  
 var timeMachineUsable = false;
 var timeWarp = false;
 
@@ -84,7 +76,7 @@ function cannibalFreqMod(){
     cannibalCounter = 6;
     console.log('shift up6');
 
-  }
+  };
 }
 
 //Cannibal Modifier
@@ -104,14 +96,13 @@ function cannibalIdentifier() {
 function activateCannibal() {
   cannibalActivate = true;
   cannibalUse++;
-  feedBackRackL.textContent = 'CANNIBAL MODE!';
-  feedBackRackR.textContent = '';
   cannibalFreqMod();
 }
 
 playerRock.addEventListener('click', playerSelRock);
 playerPaper.addEventListener('click', playerSelPaper);
 playerScissors.addEventListener('click', playerSelScissors);
+
 
 //when used, winStrk =0
 function timeMachineIdentifier() {
@@ -125,11 +116,11 @@ function timeMachineIdentifier() {
   }
 }
 
+
 function activateTimeMachine() {
   timeWarp = true;
   timeMachineUsable = false;
   winStrk = 0;
-  feedBackRackL.textContent = '1.21 gigawatts!';
 }
 
 function triggerGame() {
@@ -139,6 +130,8 @@ function triggerGame() {
     displayElement.textContent = displayRound;
     console.log(computerPrevious);
 
+
+  
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();
@@ -153,28 +146,19 @@ function triggerGame() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function win() {
-
-  feedBackRackL.textContent = '\"haHA!\"';
-  feedBackRackR.textContent = '\"BZZZz\"';
-
-  if (winStrk >= 2) {
-    timeMachineUsable = true;
-    feedBackRackL.textContent = 'WINNING STREAK!!';
-  }
-
   if (cannibalActivate === true) {
     lives++;
     livesCounter.textContent = lives;
     cannibalActivate = false;
     cannibalTurn = 0;
-    feedBackRackL.textContent = 'NOM NOM: LIVES +1';
   }
-
   round++;
   winStrk++;
 
-  display('../img/WIN.gif');
-
+  if (winStrk >= 2) {
+    timeMachineUsable = true;
+  }
+  display("../img/WIN.gif");
 }
 
 function tie() {
@@ -196,18 +180,11 @@ function tie() {
     computerCannibalActivation = false;
     cannibalTurn = 0;
     computerCannibalTurn = 0;
-
-    feedBackRackL.textContent = '\"JINX!\"';
-    feedBackRackR.textContent = '\"JINX!\"';
-
-    display('../img/TIE.gif');//tie img
-
+    console.log('double cannibal');
+    display("../img/TIE.gif");//tie img
   } else {
     console.log('no cannibals');
-    feedBackRackL.textContent = '\"JINX!\"';
-    feedBackRackR.textContent = '\"JINX!\"';
-    display('../img/TIE.gif');//tie img
-
+    display("../img/TIE.gif");//tie img
     triggerGame();
   }
 }
@@ -221,12 +198,7 @@ function lose() {
     cannibalTurn = 0;
   }
   winStrk = 0;
-
-  display('../img/LOSE.gif');//lose img
-
-  feedBackRackL.textContent = '-1 LIFE';
-  feedBackRackR.textContent = '\"haHA!\"';
-
+  display("../img/LOSE.gif");//lose img
 }
 
 function gameOver() {
@@ -242,8 +214,6 @@ function gameOver() {
     var highscore = JSON.stringify(round);
     var toLocalStorage = localStorage.setItem('High-Score', highscore);
   }
-  feedBackRackL.textContent = 'GAME OVER';
-  feedBackRackL.textContent = '\"EVIL TRIUMPHS!\"';
 }
 
 
@@ -294,7 +264,6 @@ function computerCannibalCalculation() {
   if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
-    feedBackRackR.textContent = 'CANNIBAL MODE!';
   } else {
     computerCannibalTurn++;
   }
@@ -392,7 +361,6 @@ var playerHand = document.getElementById('computerTrack');
 
 
 var playerTrack = document.getElementById('playerTrack');
-
 function displayPlayerHand() {
 
 }
@@ -414,43 +382,4 @@ function gameInstructionWindow() {
 }
 function exitGameInstruction() {
   instruction.style.display = 'none';
-}
-
-// Animation
-// function animation() {
-//   document.getElementById('playerTrackImg').className('left-to-right');
-// }
-// playerRock.addEventListener('animationend', animation, false);
-
-var rockAni = document.getElementById('rock');
-var playerHand = document.getElementById('move-right');
-
-rockAni.addEventListener('mousedown', function(){
-  playerHand.style.keyframes = '';
-}, false);
-
-rockAni.addEventListener('click',function(){
-  playerHand.style.keyframes = 'shake';
-});
-
-
-
-// document.getElementById('playerTrackImg').onclick = function(){
-//   playerHand.style.keyframes = 'shake';
-// };
-
-
-//Audio Player
-var audio = document.getElementById('audio-img');
-var audioPlayer = document.getElementById('audio-player');
-audio.addEventListener('click', audioPlayMute, false);
-
-function audioPlayMute(){
-  if(audioPlayer.muted === true){
-    audioPlayer.muted = false;
-    audio.src = '../img/audio.svg';
-  } else {
-    audioPlayer.muted = true;
-    audio.src = '../img/audio.mute.svg';
-  }
 }
