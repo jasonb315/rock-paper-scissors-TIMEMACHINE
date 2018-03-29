@@ -100,6 +100,23 @@ header {
 
 #playerTrackImg{
   float:right;
+  
+}
+
+#playerTrackImg {
+
+  animation-duration: 3s;
+  animation-name: move-right;
+  animation-direction: alternate;
+}
+@keyframes move-right {
+  from {
+    transform: translateX(-500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
 }
 
 #outcomeTrack{
@@ -127,6 +144,23 @@ header {
 #computerTrackImg{
   float:left;
 }
+
+#computerTrackImg:not{
+
+  animation-duration: 3s;
+  animation-name: move-left;
+  animation-direction: alternate;
+}
+@keyframes move-left {
+  from {
+    transform: translateX(500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
+} 
+
 
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
 
