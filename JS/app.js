@@ -106,8 +106,17 @@ function activateCannibal() {
   cannibalActivate = true;
   cannibalUse++;
   feedBackRackL.textContent = 'CANNIBAL MODE!';
-  feedBackRackR.textContent = '';
   cannibalFreqMod();
+}
+
+function foodFight(){
+  if(
+    feedBackRackL.textContent === 'CANNIBAL MODE!' &&
+    feedBackRackR.textContent === 'CANNIBAL MODE!'
+  ){
+    feedBackRackL.textContent = 'FOOD FIGHT!!';
+    feedBackRackR.textContent = 'FOOD FIGHT!!';
+  }
 }
 
 playerRock.addEventListener('click', playerSelRock);
@@ -198,8 +207,7 @@ function tie() {
     cannibalTurn = 0;
     computerCannibalTurn = 0;
 
-    feedBackRackL.textContent = '\"JINX!\"';
-    feedBackRackR.textContent = '\"JINX!\"';
+    foodFight();
 
     display('../img/TIE.gif');//tie img
 
