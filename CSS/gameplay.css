@@ -98,12 +98,12 @@ header {
   width:39%;
 }
 
-#playerTrackImg{
+#playerTrackImg {
   float:right;
   
 }
 
-#playerTrackImg {
+.left-to-right {
 
   animation-duration: 3s;
   animation-name: move-right;
@@ -146,7 +146,7 @@ header {
 }
 
 
-/* #computerTrackImg:not{
+#computerTrackImg{
 
   animation-duration: 3s;
   animation-name: move-left;
@@ -160,7 +160,7 @@ header {
   to {
     transform: translateX(0%);
   } 
-}  */
+} 
 
 
 #feedBackRack {
