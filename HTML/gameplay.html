@@ -1,183 +1,191 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+<head>
 
-      <link rel="stylesheet" href="../CSS/reset.css">
-      <link rel="stylesheet" href="../CSS/style.css">
-      <link rel="stylesheet" href="../CSS/gameplay.css">
-      <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/gameplay.css">
+  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Press+Start+2P" rel="stylesheet">
 
-      <title>
-        Play Rock Paper Scissors Time Machine
-      </title>
-    </head>
+  <title>
+    Play Rock Paper Scissors Time Machine
+  </title>
+</head>
 
-    <body id="gameplayBody">
+<body id="gameplayBody">
 
-      <header>
+  <header>
 
-        <div id="namecard">
-          <img id="playername" src="../img/PLAYER.gif" alt="">
-          <span id="name"></span>
-          <span id="user-name"></span>
+    <div id="namecard">
+      <img id="playername" src="../img/PLAYER.gif" alt="">
+      <span id="name"></span>
+      <span id="user-name"></span>
+    </div>
+
+    <div id="roundcard">
+      <div id="rounddiv" class="displaycard">
+        <span id="round">ROUND:</span>
+      </div>
+      <div id="roundnumberdiv">
+        <span id="roundNumber" class="displaycard"></span>
+      </div>
+    </div>
+
+    <div id="computercard">
+      <img id="computername" class="displaycard" src="../img/COMPUTER.gif" alt="">
+    </div>
+
+
+
+
+
+  </header>
+
+  <main>
+    <!-- ////////////////////////////////////// -->
+
+    <section id="gamemid">
+
+      <section id="spacermid">
+      </section>
+
+      <section id="battleRack">
+
+        <!-- to left side -->
+        <div id="playerTrack" class="moving-hands">
+          <img id="playerTrackImg" class="left-to-right" src="">
         </div>
 
-        <div id="roundcard">
-            <div id="rounddiv" class="displaycard">
-              <span id="round">ROUND:</span>
-            </div>
-            <div id="roundnumberdiv">
-              <span id="roundNumber" class="displaycard"></span>
-            </div>
-          </div>
-
-        <div id="computercard">
-            <img id="computername" class="displaycard" src="../img/COMPUTER.gif" alt="">
+        <div id="outcomeTrack">
+          <img id="outcomeTrackImg" src="">
+        </div>
+        <!-- to right side -->
+        <div id="computerTrack" class="moving-hands">
+          <img id="computerTrackImg" src="">
         </div>
 
+      </section>
+      <div id="feedBackRack">
+        <div id="feedBackRackL">aeferf</div>
+        <div id="feedBackRackR">aeferf</div>
+      </div>
 
-            
+    </section>
 
-              
-      </header>
-    
-      <main>
-<!-- ////////////////////////////////////// -->
-
-<section id="gamemid">
-
-  <section id="spacermid">
-  </section>
-
- <section id="battleRack">
-
-  <!-- to left side -->
-<div id="playerTrack" class="moving-hands" ><img id="playerTrackImg" class="left-to-right" src=""></div>
-
-<div id="outcomeTrack">
-    <img id="outcomeTrackImg" src="">
-</div>
-<!-- to right side -->
-<div id ="computerTrack" class="moving-hands"><img id="computerTrackImg" src=""></div>
-
- </section>
- <div id="feedBackRack">
-    <div id="feedBackRackL">aeferf</div>
-    <div id="feedBackRackR">aeferf</div>
- </div>
-
-</section>
-
-      <!-- ////////// -->
+    <!-- ////////// -->
 
 
-      </main>
+  </main>
 
-      <footer>
+  <footer>
 
-        <!-- display heart img and number of lives remaining
+    <!-- display heart img and number of lives remaining
          -->
-         
-
-        <!-- display basic/modifier images and 'how to play' button -->
-        <section>
-
-            
-
-            <div class="playrack">
-
-                <div id="heartrack">
-                    <img id="heart-img"src="../img/HEART.gif" alt="">
-                    <spand id="livesCounter"></spand>
-                  </div>
-
-                <div id="mainselections">
-                    <div class="selectdiv">
-                      <img id="rock" src="../img/ROCKplay.gif" alt="">
-                    </div>
-                    <div class="selectdiv">
-                      <img id="paper" src="../img/PAPERplay.gif" alt="">
-                    </div>
-                    <div class="selectdiv">
-                      <img id="scissors" src="../img/SCISSORplay.gif" alt="">
-                    </div>
-                  </div>
 
 
-              <div id="modcard">  
-                <div class="selectdivmod">  
-                  <img id="cannibal" src="../img/CANNONplay.gif" alt="">
-                </div>
+    <!-- display basic/modifier images and 'how to play' button -->
+    <section>
 
-                <div class="selectdivmod">
-                  <img id="time-machine" src="../img/TIMEplay.gif" alt="">
-                </div>
-             <span id="modify">POWERUP</span>
-              </div>
-         
-            </div>
-              
-              
-              <!-- <img src="img/PAPERplay.gif" alt=""> -->
-                <label for="">
-              </label>
 
-            
-            <img id="first-modifier" src="" alt="">
-            <img id="second-modifier" src="" alt="">
-          </div>
-            
-          </section>
-        </footer>
-        
-      </body>
-      
-      <footer>
-        <div id="howtoplaydiv"><a href="#" id="how-to-play">How To Play</a></div>
-<!-- Audio  -->
-        <div>
-            <img id="audio-img" src="../img/audio.svg" alt="audio playing">
-            <audio id="audio-player" controls autoplay loop>
-              <source src="../audio/gameplay.mp3">
+
+      <div class="playrack">
+
+        <div id="heartrack">
+          <img id="heart-img" src="../img/HEART.gif" alt="">
+          <spand id="livesCounter"></spand>
         </div>
 
-
-        <div id="GO-window" class="gameover">
-          <div class="modal-content">
-            <form id="gameover-window">
-              <h2>GAME OVER!</h2>
-            <button id="back-to-home">Back to Home</button>
-          </form>
+        <div id="mainselections">
+          <div class="selectdiv">
+            <img id="rock" src="../img/ROCKplay.gif" alt="">
+          </div>
+          <div class="selectdiv">
+            <img id="paper" src="../img/PAPERplay.gif" alt="">
+          </div>
+          <div class="selectdiv">
+            <img id="scissors" src="../img/SCISSORplay.gif" alt="">
           </div>
         </div>
-      
-  
-      <div id="instruction-window" class="instruction">
-          <div class="modal-content">
-            <form id="howtoplay-window">
-                <h2>HOW TO PLAY:</h2>
 
-                <p>It's Rock Paper Scissors.</p>
-                <p>
-                 <img class="playicon"src="../img/ROCKplay.gif" alt="Cannibal image">
-                 <img class="playicon"src="../img/PAPERplay.gif" alt="Cannibal image">
-                 <img class="playicon"src="../img/SCISSORplay.gif" alt="Cannibal image">
-                </p>
-     
-                 <p>But wait, add MODIFIERS!</p>
-                <p><img class="playicon"src="../img/CANNONplay.gif" alt="Cannibal image">
-                 +CANNIBAL: You WIN tie breaker! 
-                   <br>Eat when you're hungry to gain lives!</p>
 
-                 <p> <img class="playicon" src="../img/TIMEplay.gif" alt="Cannibal image">
-                   +TIME MACHINE: You play against computer's 2nd past hand. Remember!<br>Win hands to unlock!</p>
-            <button id="exit-instruction">Back to Game</button>
-          </form>
+        <div id="modcard">
+          <div class="selectdivmod">
+            <img id="cannibal" src="../img/CANNONplay.gif" alt="">
           </div>
-        </div>
-  
-    </footer>
 
-    <script src ="../JS/app.js"></script>
+          <div class="selectdivmod">
+            <img id="time-machine" src="../img/TIMEplay.gif" alt="">
+          </div>
+          <span id="modify">POWERUP</span>
+        </div>
+
+      </div>
+
+
+      <!-- <img src="img/PAPERplay.gif" alt=""> -->
+      <label for="">
+      </label>
+
+
+      <img id="first-modifier" src="" alt="">
+      <img id="second-modifier" src="" alt="">
+      </div>
+
+    </section>
+  </footer>
+
+</body>
+
+<footer>
+  <div id="howtoplaydiv">
+    <a href="#" id="how-to-play">How To Play</a>
+  </div>
+  <!-- Audio  -->
+  <div>
+    <img id="audio-img" src="../img/audio.svg" alt="audio playing">
+    <audio id="audio-player" controls autoplay loop>
+      <source src="../audio/gameplay.mp3">
+  </div>
+
+
+  <div id="GO-window" class="gameover">
+    <div class="modal-content">
+      <form id="gameover-window">
+        <h2>GAME OVER!</h2>
+        <button id="back-to-home">Back to Home</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="instruction-window" class="instruction">
+    <div class="modal-content">
+      <form id="howtoplay-window">
+        <h2>HOW TO PLAY:</h2>
+
+        <p>It's Rock Paper Scissors.</p>
+        <p>
+          <img class="playicon" src="../img/ROCKplay.gif" alt="Cannibal image">
+          <img class="playicon" src="../img/PAPERplay.gif" alt="Cannibal image">
+          <img class="playicon" src="../img/SCISSORplay.gif" alt="Cannibal image">
+        </p>
+
+        <p>But wait, add MODIFIERS!</p>
+        <p>
+          <img class="playicon" src="../img/CANNONplay.gif" alt="Cannibal image"> +CANNIBAL: You WIN tie breaker!
+          <br>Eat when you're hungry to gain lives!</p>
+
+        <p>
+          <img class="playicon" src="../img/TIMEplay.gif" alt="Cannibal image"> +TIME MACHINE: You play against computer's 2nd past hand. Remember!
+          <br>Win hands to unlock!</p>
+        <button id="exit-instruction">Back to Game</button>
+      </form>
+    </div>
+  </div>
+
+</footer>
+
+<script src="../JS/app.js"></script>
+
 </html>
