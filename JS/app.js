@@ -462,13 +462,13 @@ function exitGameInstruction() {
 // var moveRight = document.getElementById('move-right');
 
 
-rockAni.addEventListener('mousedown', function () {
-  playerHand.style.keyframes = '';
-}, false);
+// rockAni.addEventListener('mousedown', function () {
+//   playerHand.style.keyframes = '';
+// }, false);
 
-rockAni.addEventListener('click', function () {
-  playerHand.style.keyframes = 'shake';
-});
+// rockAni.addEventListener('click', function () {
+//   playerHand.style.keyframes = 'shake';
+// });
 
 
 
