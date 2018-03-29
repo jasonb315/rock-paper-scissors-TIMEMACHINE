@@ -82,17 +82,17 @@ header {
 
 #gamemid{
   height:60vh;
-  background-color: #830f49;
+  /* background-color: #830f49; */
   /* opacity:.5; */
 }
 
 #spacermid{
   height:15vh;
-  background-color: orange;
+  /* background-color: orange; */
 }
 
 #playerTrack{
-  background-color: #1d1fb1;
+  /* background-color: #1d1fb1; */
   /* float:left; */
   display:inline-block;
   width:39%;
@@ -100,10 +100,27 @@ header {
 
 #playerTrackImg{
   float:right;
+  
+}
+
+#playerTrackImg {
+
+  animation-duration: 3s;
+  animation-name: move-right;
+  animation-direction: alternate;
+}
+@keyframes move-right {
+  from {
+    transform: translateX(-500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
 }
 
 #outcomeTrack{
-  background-color: black;
+  /* background-color: black; */
   /* margin:auto; */
   display:inline-block;
   width:21%;
@@ -119,7 +136,7 @@ header {
 }
 
 #computerTrack{
-  background-color: #1eff00;
+  /* background-color: #1eff00; */
   display:inline-block;
   width:39%;
 }
@@ -128,11 +145,45 @@ header {
   float:left;
 }
 
-#feedBackRack {
-  width:20%;
-  background-color: red;
-  margin:auto;
+
+/* #computerTrackImg:not{
+
+  animation-duration: 3s;
+  animation-name: move-left;
+  animation-direction: alternate;
 }
+@keyframes move-left {
+  from {
+    transform: translateX(500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
+}  */
+
+
+#feedBackRack {
+  width:40%;
+  margin:auto;
+  color:#FFE20D;
+  font-size: 20px;
+}
+
+#feedBackRackL{
+  width:45%;
+  float:left;
+  /* background-color: powderblue; */
+  text-align:left;
+}
+
+#feedBackRackR{
+  width:45%;
+  float:right;
+  /* background-color: greenyellow; */
+  text-align:right;
+}
+
 
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
 
@@ -177,6 +228,7 @@ header {
   font-weight:bold;
   /* text-align: center; */
   opacity:.5;
+  color:#081124;
 }
 
 .selectdivmod {
