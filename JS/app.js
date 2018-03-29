@@ -1,7 +1,13 @@
 'use strict';
 
 var round = 0;
-var lives = 50;
+var lives = 10;
+
+
+
+var livesCounter = document.getElementById('livesCounter');
+livesCounter.textContent = lives;
+
 
 //canibal variables
 var cannibalTurn = 0;
@@ -39,18 +45,43 @@ var userName = JSON.parse(getUserName);
 var userNameHere = document.getElementById('name');
 userNameHere.textContent = userName;
 
+var cannibalUse = 0;
+var cannibalCounter = 0;
+//take next counter, multiply it by the number of times you want it to be used, then add that to previous counter
 
-//Time Machine
-//Create array/variable with previous hands
+function cannibalFreqMod(){
+  if(cannibalUse <= 3){
+    cannibalCounter = 1;
+    console.log('shift up');
+  }
+  else if(cannibalUse <= 6){
+    cannibalCounter = 2;
+    console.log('shift up2');
+  }
+  else if(cannibalUse <= 9){
+    cannibalCounter = 3;
+    console.log('shift up3');
 
+  }
+  else if(cannibalUse <= 12){
+    cannibalCounter = 4;
+    console.log('shift up4');
 
-// modifier event Listener
-// playerTM.addEventListener('click', )
+  }
+  else if(cannibalUse <= 15){
+    cannibalCounter = 5;
+    console.log('shift up5');
 
+  } else {
+    cannibalCounter = 6;
+    console.log('shift up6');
+
+  };
+}
 
 //Cannibal Modifier
 function cannibalIdentifier() {
-  if (cannibalTurn > 3) {
+  if (cannibalTurn > cannibalCounter) {
     playerCannibal.style.opacity = '1';
     playerCannibal.addEventListener('click', activateCannibal);
 
@@ -64,6 +95,8 @@ function cannibalIdentifier() {
 
 function activateCannibal() {
   cannibalActivate = true;
+  cannibalUse++;
+  cannibalFreqMod();
 }
 
 playerRock.addEventListener('click', playerSelRock);
@@ -98,9 +131,11 @@ function triggerGame() {
     console.log(computerPrevious);
 
 
+  
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();
+
   } else {
     alert('You\'re done!');
     gameOver();
@@ -112,11 +147,12 @@ function triggerGame() {
 
 function win() {
   if (cannibalActivate === true) {
+    lives++;
+    livesCounter.textContent = lives;
     cannibalActivate = false;
     cannibalTurn = 0;
   }
   round++;
-  // if ()
   winStrk++;
 
   if (winStrk >= 2) {
@@ -130,7 +166,8 @@ function tie() {
     cannibalActivate = false;
     cannibalTurn = 0;
     console.log('you cannibal');
-
+    lives = lives++;
+    livesCounter.textContent = lives;
     win();
   } else if (cannibalActivate === false && computerCannibalActivation === true) {
     computerCannibalActivation = false;
@@ -152,9 +189,9 @@ function tie() {
   }
 }
 
-
 function lose() {
   lives--;
+  livesCounter.textContent = lives;
   round++;
   if (cannibalActivate === true) {
     cannibalActivate = false;
