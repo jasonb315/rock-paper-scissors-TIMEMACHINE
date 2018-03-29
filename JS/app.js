@@ -104,7 +104,7 @@ function cannibalIdentifier() {
 function activateCannibal() {
   cannibalActivate = true;
   cannibalUse++;
-  feedBackRackL.textContent = 'CANNIBAL ACTIVE!';
+  feedBackRackL.textContent = 'CANNIBAL MODE!';
   feedBackRackR.textContent = '';
   cannibalFreqMod();
 }
@@ -288,6 +288,7 @@ function computerCannibalCalculation() {
   if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
+    feedBackRackR.textContent = 'CANNIBAL MODE!';
   } else {
     computerCannibalTurn++;
   }
