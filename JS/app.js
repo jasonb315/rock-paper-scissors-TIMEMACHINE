@@ -158,7 +158,9 @@ function win() {
   if (winStrk >= 2) {
     timeMachineUsable = true;
   }
+
   display("../img/WIN.gif");
+
 }
 
 function tie() {
@@ -181,10 +183,12 @@ function tie() {
     cannibalTurn = 0;
     computerCannibalTurn = 0;
     console.log('double cannibal');
+
     display("../img/TIE.gif");//tie img
   } else {
     console.log('no cannibals');
     display("../img/TIE.gif");//tie img
+
     triggerGame();
   }
 }
@@ -198,7 +202,9 @@ function lose() {
     cannibalTurn = 0;
   }
   winStrk = 0;
+
   display("../img/LOSE.gif");//lose img
+
 }
 
 function gameOver() {
@@ -361,6 +367,7 @@ var playerHand = document.getElementById('computerTrack');
 
 
 var playerTrack = document.getElementById('playerTrack');
+
 function displayPlayerHand() {
 
 }
@@ -383,3 +390,26 @@ function gameInstructionWindow() {
 function exitGameInstruction() {
   instruction.style.display = 'none';
 }
+
+// Animation
+// function animation() {
+//   document.getElementById('playerTrackImg').className('left-to-right');
+// }
+// playerRock.addEventListener('animationend', animation, false);
+
+var rockAni = document.getElementById('rock');
+var playerHand = document.getElementById('move-right');
+
+rockAni.addEventListener('mousedown', function(){
+  playerHand.style.keyframes = '';
+}, false);
+
+rockAni.addEventListener('click',function(){
+  playerHand.style.keyframes = 'shake';
+});
+
+
+
+// document.getElementById('playerTrackImg').onclick = function(){
+//   playerHand.style.keyframes = 'shake';
+// };

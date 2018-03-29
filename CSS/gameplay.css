@@ -100,6 +100,23 @@ header {
 
 #playerTrackImg{
   float:right;
+  
+}
+
+#playerTrackImg {
+
+  animation-duration: 3s;
+  animation-name: move-right;
+  animation-direction: alternate;
+}
+@keyframes move-right {
+  from {
+    transform: translateX(-500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
 }
 
 #outcomeTrack{
@@ -128,11 +145,30 @@ header {
   float:left;
 }
 
+
+/* #computerTrackImg:not{
+
+  animation-duration: 3s;
+  animation-name: move-left;
+  animation-direction: alternate;
+}
+@keyframes move-left {
+  from {
+    transform: translateX(500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
+}  */
+
+
 #feedBackRack {
   width:20%;
   background-color: red;
   margin:auto;
 }
+
 
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
 
