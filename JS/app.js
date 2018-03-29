@@ -105,14 +105,15 @@ function cannibalIdentifier() {
 function activateCannibal() {
   cannibalActivate = true;
   cannibalUse++;
-  feedBackRackL.textContent = 'CANNIBAL MODE!';
+  feedBackRackL.textContent = 'USED CANNIBAL MODE!';
+  feedBackRackR.textContent = '';
   cannibalFreqMod();
 }
 
 function foodFight(){
   if(
-    feedBackRackL.textContent === 'CANNIBAL MODE!' &&
-    feedBackRackR.textContent === 'CANNIBAL MODE!'
+    feedBackRackL.textContent === 'USED CANNIBAL MODE!' &&
+    feedBackRackR.textContent === 'USED CANNIBAL MODE!'
   ){
     feedBackRackL.textContent = 'FOOD FIGHT!!';
     feedBackRackR.textContent = 'FOOD FIGHT!!';
@@ -140,6 +141,7 @@ function activateTimeMachine() {
   timeMachineUsable = false;
   winStrk = 0;
   feedBackRackL.textContent = '1.21 gigawatts!';
+  feedBackRackR.textContent = '';
 }
 
 function triggerGame() {
@@ -200,6 +202,7 @@ function tie() {
     computerCannibalTurn = 0;
     console.log('computer cannibal');
     lose();
+    feedBackRackR.textContent = 'USED CANNIBAL MODE!';
 
   } else if (cannibalActivate === true && computerCannibalActivation === true) {
     cannibalActivate = false;
@@ -303,7 +306,6 @@ function computerCannibalCalculation() {
   if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
-    feedBackRackR.textContent = 'CANNIBAL MODE!';
   } else {
     computerCannibalTurn++;
   }
