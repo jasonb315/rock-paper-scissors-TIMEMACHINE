@@ -438,63 +438,11 @@ function exitGameInstruction() {
 }
 
 
-
-
-
-
-// Animation
-// function animation() {
-//   document.getElementById('playerTrackImg').className('left-to-right');
-// }
-// playerRock.addEventListener('animationend', animation, false);
-
-// var rockAni = document.getElementById('rock');
-// var moveRight = document.getElementById('move-right');
-
-
-rockAni.addEventListener('mousedown', function () {
-  playerHand.style.keyframes = '';
-}, false);
-
-rockAni.addEventListener('click', function () {
-  playerHand.style.keyframes = 'shake';
-});
-
-
-
-
-// document.getElementById('playerTrackImg').onclick = function(){
-//   playerHand.style.keyframes = 'shake';
-// };
-
-// rockAni.addEventListener('click', rerun);
-
-// function rerun(){
-//   // event.preventDefault;
-
-//   document.getElementById('playerTrackImg').setAttribute('class', '');
-
-
-
-//   document.getElementById('playerTrackImg').setAttribute('class', 'left-to-right');
-//   // void rockAni.offsetWidth;
-// }
-
-
-
-
-
-
-
-
-
-
-
 //Audio Player
 var audio = document.getElementById('audio-img');
 var audioPlayer = document.getElementById('audio-player');
 audio.addEventListener('click', audioPlayMute, false);
-
+// console.log('what happened to my audio?', event.target);
 function audioPlayMute() {
   if (audioPlayer.muted === true) {
     audioPlayer.muted = false;
