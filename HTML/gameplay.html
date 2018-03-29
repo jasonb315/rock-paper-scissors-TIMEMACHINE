@@ -135,27 +135,35 @@
       
       <footer>
         <div id="howtoplaydiv"><a href="#" id="how-to-play">How To Play</a></div>
+<!-- Audio  -->
+        <div>
+            <img id="audio-img" src="../img/audio.svg" alt="audio playing">
+            <audio id="audio-player" controls autoplay loop>
+              <source src="../audio/gameplay.mp3">
+        </div>
+
+
       
   
       <div id="instruction-window" class="instruction">
           <div class="modal-content">
             <form id="howtoplay-window">
-                <h2>If you havent got it by now, you won't get it. </h2>
+                <h2>HOW TO PLAY:</h2>
 
-                <p>1. It's a Rock Paper Scissors game. But WAIT, theres more!</p>
+                <p>It's Rock Paper Scissors.</p>
                 <p>
                  <img class="playicon"src="../img/ROCKplay.gif" alt="Cannibal image">
                  <img class="playicon"src="../img/PAPERplay.gif" alt="Cannibal image">
                  <img class="playicon"src="../img/SCISSORplay.gif" alt="Cannibal image">
                 </p>
-                 <p>2. MODIFIERS:</p>
+     
+                 <p>But wait, add MODIFIERS!</p>
                 <p><img class="playicon"src="../img/CANNONplay.gif" alt="Cannibal image">
-                 CANNIBAL: You WIN tie breaker! 
-
+                 +CANNIBAL: You WIN tie breaker! 
                    <br>Eat when you're hungry to gain lives!</p>
 
                  <p> <img class="playicon" src="../img/TIMEplay.gif" alt="Cannibal image">
-                   TIME MACHINE: You play against computer's 2nd past hand. Remember!<br>Win hands to unlock!</p>
+                   +TIME MACHINE: You play against computer's 2nd past hand. Remember!<br>Win hands to unlock!</p>
             <button id="exit-instruction">Back to Game</button>
           </form>
           </div>

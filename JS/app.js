@@ -84,7 +84,7 @@ function cannibalFreqMod(){
     cannibalCounter = 6;
     console.log('shift up6');
 
-  };
+  }
 }
 
 //Cannibal Modifier
@@ -104,7 +104,7 @@ function cannibalIdentifier() {
 function activateCannibal() {
   cannibalActivate = true;
   cannibalUse++;
-  feedBackRackL.textContent = 'CANNIBAL ACTIVE!';
+  feedBackRackL.textContent = 'CANNIBAL MODE!';
   feedBackRackR.textContent = '';
   cannibalFreqMod();
 }
@@ -157,7 +157,7 @@ function win() {
   feedBackRackL.textContent = '\"haHA!\"';
   feedBackRackR.textContent = '\"BZZZz\"';
 
- if (winStrk >= 2) {
+  if (winStrk >= 2) {
     timeMachineUsable = true;
     feedBackRackL.textContent = 'WINNING STREAK!!';
   }
@@ -173,7 +173,7 @@ function win() {
   round++;
   winStrk++;
 
-  display("../img/WIN.gif");
+  display('../img/WIN.gif');
 
 }
 
@@ -200,13 +200,13 @@ function tie() {
     feedBackRackL.textContent = '\"JINX!\"';
     feedBackRackR.textContent = '\"JINX!\"';
 
-    display("../img/TIE.gif");//tie img
-    
+    display('../img/TIE.gif');//tie img
+
   } else {
     console.log('no cannibals');
     feedBackRackL.textContent = '\"JINX!\"';
     feedBackRackR.textContent = '\"JINX!\"';
-    display("../img/TIE.gif");//tie img
+    display('../img/TIE.gif');//tie img
 
     triggerGame();
   }
@@ -222,7 +222,7 @@ function lose() {
   }
   winStrk = 0;
 
-  display("../img/LOSE.gif");//lose img
+  display('../img/LOSE.gif');//lose img
 
   feedBackRackL.textContent = '-1 LIFE';
   feedBackRackR.textContent = '\"haHA!\"';
@@ -294,6 +294,7 @@ function computerCannibalCalculation() {
   if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
+    feedBackRackR.textContent = 'CANNIBAL MODE!';
   } else {
     computerCannibalTurn++;
   }
@@ -437,3 +438,19 @@ rockAni.addEventListener('click',function(){
 // document.getElementById('playerTrackImg').onclick = function(){
 //   playerHand.style.keyframes = 'shake';
 // };
+
+
+//Audio Player
+var audio = document.getElementById('audio-img');
+var audioPlayer = document.getElementById('audio-player');
+audio.addEventListener('click', audioPlayMute, false);
+
+function audioPlayMute(){
+  if(audioPlayer.muted === true){
+    audioPlayer.muted = false;
+    audio.src = '../img/audio.svg';
+  } else {
+    audioPlayer.muted = true;
+    audio.src = '../img/audio.mute.svg';
+  }
+}
