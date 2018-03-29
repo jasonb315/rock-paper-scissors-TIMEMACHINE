@@ -1,5 +1,4 @@
 #gameplayBody {
-  /* height: 90vh; */
   background-size: 100%;
   background-image: url("../img/GAMEPLAYbg.gif");
   font-family: 'Caveat Brush', cursive;
@@ -23,11 +22,17 @@ header {
   border-radius: 10px;
 }
 
-#playername,
-#computername {
+#playername {
   margin-left:30px;
   height:100%;
   display:inline-block;
+}
+
+#computername{
+  margin-right:30px;
+  height:100%;
+  /* display:inline-block; */
+  float: right
 }
 
 #name{
