@@ -432,9 +432,15 @@ exitButton.addEventListener('click', exitGameInstruction);
 function gameInstructionWindow() {
   instruction.style.display = 'block';
 }
+
 function exitGameInstruction() {
   instruction.style.display = 'none';
 }
+
+
+
+
+
 
 // Animation
 // function animation() {
@@ -442,8 +448,9 @@ function exitGameInstruction() {
 // }
 // playerRock.addEventListener('animationend', animation, false);
 
-var rockAni = document.getElementById('rock');
-var playerHand = document.getElementById('move-right');
+// var rockAni = document.getElementById('rock');
+// var moveRight = document.getElementById('move-right');
+
 
 rockAni.addEventListener('mousedown', function () {
   playerHand.style.keyframes = '';
@@ -455,9 +462,32 @@ rockAni.addEventListener('click', function () {
 
 
 
+
 // document.getElementById('playerTrackImg').onclick = function(){
 //   playerHand.style.keyframes = 'shake';
 // };
+
+// rockAni.addEventListener('click', rerun);
+
+// function rerun(){
+//   // event.preventDefault;
+
+//   document.getElementById('playerTrackImg').setAttribute('class', '');
+
+
+
+//   document.getElementById('playerTrackImg').setAttribute('class', 'left-to-right');
+//   // void rockAni.offsetWidth;
+// }
+
+
+
+
+
+
+
+
+
 
 
 //Audio Player
