@@ -1,7 +1,13 @@
 'use strict';
 
 var round = 0;
-var lives = 50;
+var lives = 10;
+
+
+
+var livesCounter = document.getElementById('livesCounter');
+livesCounter.textContent = lives;
+
 
 //canibal variables
 var cannibalTurn = 0;
@@ -13,7 +19,8 @@ var timeMachineUsable = false;
 var timeWarp = false;
 
 //computer variables
-var computerPrevious = '';
+// var computerPrevious = '';
+var computerPrevious = [];
 var computerChoice = '';
 // Computer modifier variables
 var computerCannibalActivation = false;
@@ -38,18 +45,43 @@ var userName = JSON.parse(getUserName);
 var userNameHere = document.getElementById('name');
 userNameHere.textContent = userName;
 
+var cannibalUse = 0;
+var cannibalCounter = 0;
+//take next counter, multiply it by the number of times you want it to be used, then add that to previous counter
 
-//Time Machine
-//Create array/variable with previous hands
+function cannibalFreqMod(){
+  if(cannibalUse <= 3){
+    cannibalCounter = 1;
+    console.log('shift up');
+  }
+  else if(cannibalUse <= 6){
+    cannibalCounter = 2;
+    console.log('shift up2');
+  }
+  else if(cannibalUse <= 9){
+    cannibalCounter = 3;
+    console.log('shift up3');
 
+  }
+  else if(cannibalUse <= 12){
+    cannibalCounter = 4;
+    console.log('shift up4');
 
-// modifier event Listener
-// playerTM.addEventListener('click', )
+  }
+  else if(cannibalUse <= 15){
+    cannibalCounter = 5;
+    console.log('shift up5');
 
+  } else {
+    cannibalCounter = 6;
+    console.log('shift up6');
+
+  };
+}
 
 //Cannibal Modifier
 function cannibalIdentifier() {
-  if (cannibalTurn > 3) {
+  if (cannibalTurn > cannibalCounter) {
     playerCannibal.style.opacity = '1';
     playerCannibal.addEventListener('click', activateCannibal);
 
@@ -63,6 +95,8 @@ function cannibalIdentifier() {
 
 function activateCannibal() {
   cannibalActivate = true;
+  cannibalUse++;
+  cannibalFreqMod();
 }
 
 playerRock.addEventListener('click', playerSelRock);
@@ -94,10 +128,14 @@ function triggerGame() {
     var displayRound = round + 1;
     var displayElement = document.getElementById('roundNumber');
     displayElement.textContent = displayRound;
+    console.log(computerPrevious);
 
+
+  
     cannibalIdentifier();
     computerCannibalCalculation();
     timeMachineIdentifier();
+
   } else {
     alert('You\'re done!');
     gameOver();
@@ -109,17 +147,20 @@ function triggerGame() {
 
 function win() {
   if (cannibalActivate === true) {
+    lives++;
+    livesCounter.textContent = lives;
     cannibalActivate = false;
     cannibalTurn = 0;
   }
   round++;
-  // if ()
   winStrk++;
 
   if (winStrk >= 2) {
     timeMachineUsable = true;
   }
-  display ('../img/WIN.gif');
+
+  display("../img/WIN.gif");
+
 }
 
 function tie() {
@@ -127,7 +168,8 @@ function tie() {
     cannibalActivate = false;
     cannibalTurn = 0;
     console.log('you cannibal');
-
+    lives = lives++;
+    livesCounter.textContent = lives;
     win();
   } else if (cannibalActivate === false && computerCannibalActivation === true) {
     computerCannibalActivation = false;
@@ -141,25 +183,28 @@ function tie() {
     cannibalTurn = 0;
     computerCannibalTurn = 0;
     console.log('double cannibal');
-    display ('../img/TIE.gif');//tie img
+
+    display("../img/TIE.gif");//tie img
   } else {
     console.log('no cannibals');
-    display ('../img/TIE.gif');//tie img
+    display("../img/TIE.gif");//tie img
+
     triggerGame();
   }
 }
 
-
-
 function lose() {
   lives--;
+  livesCounter.textContent = lives;
   round++;
   if (cannibalActivate === true) {
     cannibalActivate = false;
     cannibalTurn = 0;
   }
   winStrk = 0;
-  display ('../img/LOSE.gif');//lose img
+
+  display("../img/LOSE.gif");//lose img
+
 }
 
 function gameOver() {
@@ -178,19 +223,41 @@ function gameOver() {
 }
 
 
+function timeMachineDestination() {
+  computerPrevious.unshift(computerChoice);
+  if (computerPrevious.length > 2) {
+    computerPrevious.pop();
+  }
+}
+
+
+function timeMachineActivation() {
+  if (timeWarp === true) {
+    computerChoice = computerPrevious[1];
+    timeWarp = false;
+  } if (computerChoice === 'rock') {
+    computerrock('computerTrackImg');
+  } else if (computerChoice === 'paper') {
+    computerpaper('computerTrackImg');
+  } else {
+    computerscissors('computerTrackImg');
+  }
+}
+
+
 function computerDecision() {
   var computerValue = Math.random();
   if (computerValue < .33) {
     var computerSelectedChoice = 'rock';
-    computerrock ('computerTrackImg');
+    computerrock('computerTrackImg');
 
   } else if (computerValue > .67) {
     computerSelectedChoice = 'paper';
-    computerpaper ('computerTrackImg');
+    computerpaper('computerTrackImg');
 
   } else {
     computerSelectedChoice = 'scissors';
-    computerscissors ('computerTrackImg');
+    computerscissors('computerTrackImg');
   }
   computerChoice = computerSelectedChoice;
 }
@@ -208,14 +275,15 @@ function computerCannibalCalculation() {
   }
 }
 
+
+
+
 function playerSelRock() {
-  playerrock ('playerTrackImg');
+  playerrock('playerTrackImg');
   computerDecision();
 
-  if (timeWarp === true) {
-    computerChoice = computerPrevious;
-    timeWarp = false;
-  }
+  timeMachineActivation();
+
   if (computerChoice === 'scissors') {
     win();
   } else if (computerChoice === 'paper') {
@@ -223,18 +291,17 @@ function playerSelRock() {
   } else if (computerChoice === 'rock') {
     tie();
   }
-  computerPrevious = computerChoice;
+  timeMachineDestination();
+  // computerPrevious = computerChoice;
   triggerGame();
 }
 
 function playerSelPaper() {
-  playerpaper ('playerTrackImg');
+  playerpaper('playerTrackImg');
   computerDecision();
 
-  if (timeWarp === true) {
-    computerChoice = computerPrevious;
-    timeWarp = false;
-  }
+  timeMachineActivation();
+
   if (computerChoice === 'scissors') {
     lose();
 
@@ -244,18 +311,16 @@ function playerSelPaper() {
   } else if (computerChoice === 'rock') {
     win();
   }
-  computerPrevious = computerChoice;
+  timeMachineDestination();
+  // computerPrevious = computerChoice;
   triggerGame();
 }
 
 function playerSelScissors() {
-  playerscissors ('playerTrackImg');
+  playerscissors('playerTrackImg');
   computerDecision();
 
-  if (timeWarp === true) {
-    computerChoice = computerPrevious;
-    timeWarp = false;
-  }
+  timeMachineActivation();
   if (computerChoice === 'scissors') {
     tie();
   } else if (computerChoice === 'paper') {
@@ -263,35 +328,36 @@ function playerSelScissors() {
   } else if (computerChoice === 'rock') {
     lose();
   }
-  computerPrevious = computerChoice;
+  timeMachineDestination();
+  // computerPrevious = computerChoice;
   triggerGame();
 }
 //////////////////////////////////////////////////////////
-function playerrock (myImg){
+function playerrock(myImg) {
   document.getElementById(myImg).src = '../img/ROCKplay.gif';
 }
 
-function playerpaper (myImg){
+function playerpaper(myImg) {
   document.getElementById(myImg).src = '../img/PAPERplay.gif';
 }
 
-function playerscissors (myImg){
+function playerscissors(myImg) {
   document.getElementById(myImg).src = '../img/SCISSORplay.gif';
 }
 //////////
-function computerrock (myImg2){
+function computerrock(myImg2) {
   document.getElementById(myImg2).src = '../img/ROCKcomp.gif';
 }
 
-function computerpaper (myImg2){
+function computerpaper(myImg2) {
   document.getElementById(myImg2).src = '../img/PAPERcomp.gif';
 }
 
-function computerscissors (myImg2){
+function computerscissors(myImg2) {
   document.getElementById(myImg2).src = '../img/SCISSORcomp.gif';
 }
 
-function display (outcome){
+function display(outcome) {
   document.getElementById('outcomeTrackImg').src = outcome;
 }
 
@@ -301,7 +367,8 @@ var playerHand = document.getElementById('computerTrack');
 
 
 var playerTrack = document.getElementById('playerTrack');
-function displayPlayerHand(){
+
+function displayPlayerHand() {
 
 }
 

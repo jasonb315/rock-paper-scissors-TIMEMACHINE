@@ -145,7 +145,8 @@ header {
   float:left;
 }
 
-#computerTrackImg:not{
+
+/* #computerTrackImg:not{
 
   animation-duration: 3s;
   animation-name: move-left;
@@ -159,7 +160,14 @@ header {
   to {
     transform: translateX(0%);
   } 
-} 
+}  */
+
+
+#feedBackRack {
+  width:20%;
+  background-color: red;
+  margin:auto;
+}
 
 
 /* ////////////////PLAYER RACK////////////////////////////////////////// */
@@ -230,8 +238,8 @@ header {
   display:inline-block;
 }
 
-#lives{
-  font-size: 30px;
+#livesCounter{
+  font-size: 60px;
   color:#FFE20D;
   display:inline-block;
 }
