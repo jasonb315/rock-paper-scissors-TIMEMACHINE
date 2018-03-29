@@ -280,8 +280,18 @@ header {
   text-align: center;
 }
 
-#howtoplaydiv {
+#how-to-play {
   float: right;
+  font-size: 25px;
+  color: yellow;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  margin-right: 2%;
+}
+
+#how-to-play:hover {
+  color: red;
+  cursor: pointer;
 }
 
 
