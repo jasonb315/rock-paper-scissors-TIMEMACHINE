@@ -2,6 +2,7 @@
   /* height: 90vh; */
   background-size: 100%;
   background-image: url("../img/GAMEPLAYbg.gif");
+  font-family: 'Caveat Brush', cursive;
 }
 
 header {
@@ -164,10 +165,10 @@ header {
 
 
 #feedBackRack {
-  width:40%;
+  width:60%;
   margin:auto;
   color:#FFE20D;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 #feedBackRackL{
@@ -427,6 +428,9 @@ button:hover{
   width: 80px;
 }
 
+#howtoplaydiv{
+  opacity: .5;
+}
 /* audio  */
 audio {
   display: none;
