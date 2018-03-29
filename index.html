@@ -1,32 +1,114 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-
+      <link rel="stylesheet" href="CSS/reset.css">
+      <link rel="stylesheet" href="CSS/style.css">
+      <link rel="stylesheet" href="CSS/home.css">
+      <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Press+Start+2P" rel="stylesheet">
       <title>
-
+        Rock Paper Scissors Time Machine
       </title>
-
-    </head>
-
-    <body>
-
-      <header>
-
-      </header>
-
-      <main>
-
-      </main>
 
       <footer>
 
       </footer>
+    </head>
+
+    <body>
+
+      <!-- Audio  -->
+      <div>
+          <img id="audio-img" src="img/audio.svg" alt="audio playing">
+          <audio id="audio-player" controls autoplay loop>
+            <source src="audio/menu.mp3">
+      </div>
+
+      <header id="spacer">
+      <!-- this just keeps space along the top -->
+      </header>
+
+      <section id="title">
+        <div class="centerimg">
+          <img id="title-img" src="img/TITLEtext.gif" alt="">
+        </div>
+      </section>
+
+
+      <section id="playsection">
+        <!-- Display logo img and play button right underneath -->
+        <div id="playbox">
+        <a href="HTML/gameplay.html"><img id="play-img" src="img/PLAYbutton.gif" alt=""></a>
+        </div>
+      </section>
+
+
+
+<!-- window for new users -->
+      <div id="transition-window" class="new-user">
+          <div class="modal-content">
+            <form id="usernameCreation">
+            <h2>Enter name here</h2>
+            <input type="text" id="username" minlength="3" maxlength="12" required>
+            <button id='submitted'>Next</button>
+          </form>
+          </div>
+        </div>
+      
+<!-- window for old users -->
+        <div id="welcome-back" class="old-user">
+          <div class="modal-content">
+            <form id="welcome-back-msg">
+            <h2 id="welcomeBack"></h2>
+            <button id="play-game-button">Next</button>
+          </form>
+          </div>
+        </div>
+
+<!-- window for How To Play instructions -->
+        <div id="instruction-window" class="instruction">
+          <div class="modal-content">
+            <form id="howtoplay-window">
+              <h2>Rules</h2>
+
+           <p>1. It's a Rock Paper Scissors game. But WAIT, theres more!</p>
+           <p>
+            <img class="playicon"src="img/ROCKplay.gif" alt="Cannibal image">
+            <img class="playicon"src="img/PAPERplay.gif" alt="Cannibal image">
+            <img class="playicon"src="img/SCISSORplay.gif" alt="Cannibal image">
+           </p>
+            <p>2. MODIFIERS:</p>
+           <p><img class="playicon"src="img/CANNONplay.gif" alt="Cannibal image">
+            CANNIBAL: You WIN tie breaker! 
+              <br>It will activate when it feels like it.</p>
+            <p> <img class="playicon" src="img/TIMEplay.gif" alt="Cannibal image">
+              TIME MACHINE: You play against computer's past hand. <br>It will only activate when the player stops being a loser.</p>
+            <button id="play-game-button">Next</button>
+          </form>
+          </div>
+        </div>
 
     </body>
+    
+    <header id="spacer2">
+      <!-- this just keeps space along the top -->
+      </header>
 
-    <footer>
-      
-    </footer>
+    <section id="about-score">
+
+      <!-- Display 'About Us' and Highest rounds previously recorded, at the bottom of the home page -->
+      <div id="aboutbox">
+        <a href="HTML/about.html"><img id="about-img" src="img/ABOUTbutton.gif" alt=""></a>
+       
+      </div>
+
+      <div id="scoreboardbox">
+        <img id="score-img" src="img/HIGHbutton.gif" alt="">
+
+        <p id="highest-round">#JS#</p>
+      </div>
+ 
+      <script src="JS/home.js"></script>
+    
+    </section>
     
 </html>

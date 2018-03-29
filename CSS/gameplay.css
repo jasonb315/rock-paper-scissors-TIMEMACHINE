@@ -1,0 +1,468 @@
+#gameplayBody {
+  background-size: 100%;
+  background-image: url("../img/GAMEPLAYbg.gif");
+  font-family: 'Caveat Brush', cursive;
+}
+
+header {
+  height:10vh;
+  /* background-color: #081124; */
+}
+
+#namecard{
+  height: 100%;
+  line-height: 100%;
+  width:39%;
+  /* margin-left:50px; */
+  background-color: #081124;
+  font-size: 35px;
+  color: #FFE20D;
+  border: 2px solid #FFE20D;
+  display:inline-block;
+  border-radius: 10px;
+}
+
+#playername {
+  margin-left:30px;
+  height:100%;
+  display:inline-block;
+}
+
+#computername{
+  margin-right:30px;
+  height:100%;
+  /* display:inline-block; */
+  float: right
+}
+
+#name{
+  /* display: inline-block; */
+  vertical-align: 30px;
+  margin: auto 8%;
+  /* line-height: -30px; */
+}
+
+#computercard{
+  height: 100%;
+  line-height: 100%;
+  width:39%;
+  /* margin-right:50px; */
+  background-color: #081124;
+  font-size: 35px;
+  color: #FFE20D;
+  border: 2px solid #FFE20D;
+  display:inline-block;
+  border-radius: 10px;
+}
+
+#computer{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+#roundcard{
+  /* position: absolute; */
+  width: 19%;
+  height:80px;
+  display:inline-block;
+  margin: auto;
+  background-color: #081124;
+  border: 2px solid #FFE20D;
+  border-radius: 10px;
+}
+
+#rounddiv{
+  /* background-color: black; */
+  color:#FFE20D;
+}
+
+#roundnumberdiv{
+  background-color: #081124;
+}
+
+#roundNumber{
+  color:#FFE20D;
+  font-size: 50px;
+}
+
+#gamemid{
+  height:60vh;
+  /* background-color: #830f49; */
+  /* opacity:.5; */
+}
+
+#spacermid{
+  height:15vh;
+  /* background-color: orange; */
+}
+
+#playerTrack{
+  /* background-color: #1d1fb1; */
+  /* float:left; */
+  display:inline-block;
+  width:39%;
+}
+
+#playerTrackImg {
+  float:right;
+  
+}
+
+.left-to-right {
+
+  animation-duration: 3s;
+  animation-name: move-right;
+  animation-direction: alternate;
+}
+@keyframes move-right {
+  from {
+    transform: translateX(-500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
+}
+
+#outcomeTrack{
+  /* background-color: black; */
+  /* margin:auto; */
+  display:inline-block;
+  width:21%;
+}
+
+#outcomeTrackImg{
+  width:100%;
+}
+
+#outcomeTrackImg{
+  display:block;
+  margin: 0 auto;
+}
+
+#computerTrack{
+  /* background-color: #1eff00; */
+  display:inline-block;
+  width:39%;
+}
+
+#computerTrackImg{
+  float:left;
+}
+
+
+#computerTrackImg{
+
+  animation-duration: 3s;
+  animation-name: move-left;
+  animation-direction: alternate;
+}
+@keyframes move-left {
+  from {
+    transform: translateX(500%);
+  }
+
+  to {
+    transform: translateX(0%);
+  } 
+} 
+
+
+#feedBackRack {
+  width:60%;
+  margin:auto;
+  color:#FFE20D;
+  font-size: 30px;
+}
+
+#feedBackRackL{
+  width:45%;
+  float:left;
+  /* background-color: powderblue; */
+  text-align:left;
+}
+
+#feedBackRackR{
+  width:45%;
+  float:right;
+  /* background-color: greenyellow; */
+  text-align:right;
+}
+
+
+/* ////////////////PLAYER RACK////////////////////////////////////////// */
+
+.playrack{
+  height:20vh;
+  width:100%;
+  /* background-color: red; */
+}
+
+#mainselections {
+  width: 390px;
+  height:130px;
+  display:inline-block;
+  margin-left:60px;
+  background-color: #081124;
+  border: 3px solid #FFE20D;
+  border-radius: 70px;
+  /* opacity: 0.5; */
+}
+
+.selectdiv {
+  display:inline-block;
+  width:32%;
+  /* opacity: 1; */
+  /* background-color: #be1a1a; */
+}
+
+#modcard {
+  width: 240px;
+  height:120px;
+  display:inline-block;
+  margin-left:10px;
+  background-color: #081124;
+  border: 3px solid #FFE20D;
+  border-radius: 60px;
+  color: #FFE20D;
+}
+
+#modify{
+  margin-left:50px;
+  font-size:15px;
+  font-weight:bold;
+  /* text-align: center; */
+  opacity:.5;
+  color:#081124;
+}
+
+.selectdivmod {
+  display:inline-block;
+  width:40%;
+  /* height:100%; */
+  /* opacity: 1; */
+  /* background-color: #be1a1a; */
+}
+
+#heartrack{
+  height: 50px;
+  width: 120px;
+  margin-left:50px;
+  display:inline-block;
+  border: 3px solid #FFE20D;
+  border-radius: 60px;
+  background-color: #102347;
+}
+
+#heart-img{
+  height:100%;
+  display:inline-block;
+}
+
+#livesCounter{
+  font-size: 60px;
+  color:#FFE20D;
+  display:inline-block;
+}
+
+#modcard img {
+  height:80%;
+}
+
+#rock {
+  width:100%;
+}
+
+#paper{
+  width:100%;
+}
+
+#scissors{
+  width:100%;
+}
+
+#cannibal{
+  width:100%;
+}
+
+#time-machine {
+  width:100%;
+  margin-left:20px;
+}
+
+#cannibal{
+ margin-left:20px;
+}
+
+#rock:hover {
+  transform: scale(1.1);
+}
+
+#paper:hover {
+  transform: scale(1.1);
+}
+
+#scissors:hover {
+  transform: scale(1.1);
+}
+
+#time-machine:hover{
+  transform: scale(1.1);
+}
+
+#time-machine:active{
+  transform: scale(1);
+}
+
+#rock:active{
+  transform: scale(1);
+}
+
+#paper:active {
+  transform: scale(1);
+}
+
+#scissors:active {
+  transform: scale(1);
+}
+
+#cannibal:hover {
+  transform: scale(1.1);
+}
+
+#cannibal:active {
+  transform: scale(1);
+}
+
+#round {
+  font-size: 1.7em;
+  padding: 15px 0 0 10px;
+}
+
+#roundnumberdiv {
+  text-align: center;
+}
+
+#how-to-play {
+  float: right;
+  font-size: 25px;
+  color: yellow;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  margin-right: 2%;
+}
+
+#how-to-play:hover {
+  color: red;
+  cursor: pointer;
+}
+
+
+
+.gameover {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  margin: auto;
+  background-color: rgb(0,0,0,0,6); 
+  background-color: rgba(0,0,0,0.6); 
+}
+
+  
+
+.instruction {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  margin: auto;
+  background-color: rgb(0,0,0,0,6); 
+  background-color: rgba(0,0,0,0.6); 
+}
+
+#instruction-window{
+  padding-top: 0
+}
+
+.modal-content {
+  background-color: #102347;
+  margin: auto;
+  padding: 3em 2em;
+  border: 3px solid yellow;
+  width: 60%;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: yellow;
+  margin-bottom: 1em;
+}
+p{
+  font-size: 35px;
+  color: yellow;
+  font-family: 'Caveat Brush', cursive;
+  margin-bottom: .6em;
+}
+input {
+  margin: 2em 40% 2em 30%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding: 1em;
+}
+
+button {
+  text-align: center;
+  color: white;
+  border: 5px solid yellow;
+  background-color: #081124;
+  margin: .8em 45% 0 45%;
+  padding: .8em 1.5em;
+  font-size: 15px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+button:hover{
+  cursor: pointer;
+  border: 5px solid red;
+}
+
+.playicon {
+  width: 80px;
+}
+
+#howtoplaydiv{
+  opacity: .5;
+}
+/* audio  */
+audio {
+  display: none;
+}
+
+#audio-img {
+  float: right; 
+  width: 50px;
+  height: 50px;
+  margin: -1em 2em 0 0;
+  /* margin-bottom: 3em; */
+}
+
+#audio-img:hover {
+  border: 2px solid red;
+  cursor: pointer;
+}
