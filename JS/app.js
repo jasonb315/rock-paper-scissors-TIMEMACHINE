@@ -105,9 +105,19 @@ function cannibalIdentifier() {
 function activateCannibal() {
   cannibalActivate = true;
   cannibalUse++;
-  feedBackRackL.textContent = 'CANNIBAL MODE!';
+  feedBackRackL.textContent = 'USED CANNIBAL MODE!';
   feedBackRackR.textContent = '';
   cannibalFreqMod();
+}
+
+function foodFight(){
+  if(
+    feedBackRackL.textContent === 'USED CANNIBAL MODE!' &&
+    feedBackRackR.textContent === 'USED CANNIBAL MODE!'
+  ){
+    feedBackRackL.textContent = 'FOOD FIGHT!!';
+    feedBackRackR.textContent = 'FOOD FIGHT!!';
+  }
 }
 
 playerRock.addEventListener('click', playerSelRock);
@@ -131,6 +141,7 @@ function activateTimeMachine() {
   timeMachineUsable = false;
   winStrk = 0;
   feedBackRackL.textContent = '1.21 gigawatts!';
+  feedBackRackR.textContent = '';
 }
 
 function triggerGame() {
@@ -191,6 +202,7 @@ function tie() {
     computerCannibalTurn = 0;
     console.log('computer cannibal');
     lose();
+    feedBackRackR.textContent = 'USED CANNIBAL MODE!';
 
   } else if (cannibalActivate === true && computerCannibalActivation === true) {
     cannibalActivate = false;
@@ -198,8 +210,7 @@ function tie() {
     cannibalTurn = 0;
     computerCannibalTurn = 0;
 
-    feedBackRackL.textContent = '\"JINX!\"';
-    feedBackRackR.textContent = '\"JINX!\"';
+    foodFight();
 
     display('../img/TIE.gif');//tie img
 
@@ -295,7 +306,6 @@ function computerCannibalCalculation() {
   if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
-    feedBackRackR.textContent = 'CANNIBAL MODE!';
   } else {
     computerCannibalTurn++;
   }
@@ -452,13 +462,13 @@ function exitGameInstruction() {
 // var moveRight = document.getElementById('move-right');
 
 
-rockAni.addEventListener('mousedown', function () {
-  playerHand.style.keyframes = '';
-}, false);
+// rockAni.addEventListener('mousedown', function () {
+//   playerHand.style.keyframes = '';
+// }, false);
 
-rockAni.addEventListener('click', function () {
-  playerHand.style.keyframes = 'shake';
-});
+// rockAni.addEventListener('click', function () {
+//   playerHand.style.keyframes = 'shake';
+// });
 
 
 
