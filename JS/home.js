@@ -1,21 +1,13 @@
 'use strict';
 
 var playButton = document.getElementById('play-img');
-
 var newUser = document.getElementById('transition-window');
-
 var submitted = document.getElementById('usernameCreation');
-
 var oldUser = document.getElementById('welcome-back');
-
 var welcomeBack = document.getElementById('welcomeBack');
-
 var playGame = document.getElementById('welcome-back-msg');
-
 var howToPlay = document.getElementById('instruction-window');
-
 var instruction= document.getElementById('howtoplay-window');
-
 
 // Load user name and high score from local Storage
 var loadLocalStorage = localStorage.getItem('TM-username');
@@ -33,16 +25,15 @@ if (typeof (savedUserName) === 'object') {
   playButton.addEventListener('click', oldPlayer);
 }
 
-
 //window for users to input user name
 function newPlayer() {
   event.preventDefault();
   newUser.style.display = 'block';
 }
 
+// Load saved username from local storage
 function submitter() {
   event.preventDefault();
-
   var userName = event.target.username.value;
   var userNameToLocalStorage = JSON.stringify(userName);
   var toLocalStorage = localStorage.setItem('TM-username', userNameToLocalStorage);
@@ -57,14 +48,11 @@ function submitter() {
   } else {
     gameInstructionWindow();
   }
-
 }
-
 
 //window for old users, welcome window
 function oldPlayer() {
   event.preventDefault();
-
   welcomeBack.textContent = 'Welcome Back ' + savedUserName;
   oldUser.style.display = 'block';
 }
@@ -72,7 +60,6 @@ function oldPlayer() {
 function playGameNow() {
   event.preventDefault();
   oldUser.style.display = 'none';
-
 
   // Show instruction if not seen already
   var fromLocalStorage = localStorage.getItem('TM-instruction-read');
@@ -85,11 +72,9 @@ function playGameNow() {
   }
 }
 
-
 //window for How To Play instructions
 function gameInstructionWindow() {
   event.preventDefault();
-
   howToPlay.style.display = 'block';
 }
 
@@ -98,32 +83,15 @@ function goToGamePlay() {
 
   var useenInstruction = JSON.stringify(true);
   var toLocalStorage = localStorage.setItem('TM-instruction-read', useenInstruction);
-
   howToPlay.style.display = 'none';
   window.location.href='HTML/gameplay.html';
 }
-
 
 submitted.addEventListener('submit', submitter);
 playGame.addEventListener('submit', playGameNow);
 instruction.addEventListener('submit', goToGamePlay);
 
-
-// function muteAudio() {
-//   var audio = document.getElementById('audioPlayer');
-
-//   if (audio.mute == false)
-//   {
-//     document.getElementById('audioPlayer').muted = true;
-//   }
-//   else
-//   {
-//     audio.mute = true;
-//     document.getElementById('audioPlayer').muted = false;
-//   }
-// }
-// muteAudio();
-
+// Audio
 var audio = document.getElementById('audio-img');
 var audioPlayer = document.getElementById('audio-player');
 audio.addEventListener('click', audioPlayMute, false);

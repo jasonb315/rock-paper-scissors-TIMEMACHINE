@@ -179,24 +179,17 @@ header {
 #feedBackRackL{
   width:45%;
   float:left;
-  /* background-color: powderblue; */
   text-align:left;
 }
 
 #feedBackRackR{
   width:45%;
   float:right;
-  /* background-color: greenyellow; */
   text-align:right;
 }
 
-
-/* ////////////////PLAYER RACK////////////////////////////////////////// */
-
 .playrack{
   height:20vh;
-  width:100%;
-  /* background-color: red; */
 }
 
 #mainselections {
@@ -207,14 +200,11 @@ header {
   background-color: #081124;
   border: 3px solid #FFE20D;
   border-radius: 70px;
-  /* opacity: 0.5; */
 }
 
 .selectdiv {
   display:inline-block;
   width:32%;
-  /* opacity: 1; */
-  /* background-color: #be1a1a; */
 }
 
 #modcard {
@@ -232,7 +222,6 @@ header {
   margin-left:50px;
   font-size:15px;
   font-weight:bold;
-  /* text-align: center; */
   opacity:.5;
   color:#081124;
 }
@@ -240,9 +229,6 @@ header {
 .selectdivmod {
   display:inline-block;
   width:40%;
-  /* height:100%; */
-  /* opacity: 1; */
-  /* background-color: #be1a1a; */
 }
 
 #heartrack{
@@ -449,7 +435,7 @@ button:hover{
 #howtoplaydiv{
   opacity: .5;
 }
-/* audio  */
+
 audio {
   display: none;
 }
@@ -459,7 +445,6 @@ audio {
   width: 50px;
   height: 50px;
   margin: -1em 2em 0 0;
-  /* margin-bottom: 3em; */
 }
 
 #audio-img:hover {
