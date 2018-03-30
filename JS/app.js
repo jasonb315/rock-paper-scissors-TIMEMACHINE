@@ -172,7 +172,7 @@ function tie() {
   if (cannibalActivate === true && computerCannibalActivation === false) {
     cannibalActivate = false;
     cannibalTurn = 0;
-    lives = lives++;
+    lives++;
     livesCounter.textContent = lives;
     win();
   } else if (cannibalActivate === false && computerCannibalActivation === true) {
@@ -347,12 +347,7 @@ function display(outcome) {
   document.getElementById('outcomeTrackImg').src = outcome;
 }
 
-var battleRack = document.getElementById('battleRack');
-var playerHand = document.getElementById('computerTrack');
-
-var playerTrack = document.getElementById('playerTrack');
-
-triggerGame();
+///////
 
 //How To Play Instruction Window
 var howToPlay = document.getElementById('how-to-play');
@@ -380,6 +375,7 @@ function gameInstructionWindow() {
 }
 
 function exitGameInstruction() {
+  event.preventDefault();
   instruction.style.display = 'none';
 }
 
@@ -396,3 +392,5 @@ function audioPlayMute() {
     audio.src = '../img/audio.mute.svg';
   }
 }
+
+triggerGame();
