@@ -15,6 +15,7 @@
 
     <body id="gameplayBody">
 
+<<<<<<< HEAD
       <header>
 
         <div id="namecard">
@@ -31,11 +32,42 @@
               <span id="roundNumber" class="displaycard"></span>
             </div>
           </div>
+=======
+  <header>
+<!-- display Player: username, round#, and Computer on top -->
+    <div id="namecard">
+      <img id="playername" src="../img/PLAYER.gif" alt="">
+      <span id="name"></span>
+      <span id="user-name"></span>
+    </div>
+
+    <div id="roundcard">
+      <div id="rounddiv" class="displaycard">
+        <span id="round">ROUND:</span>
+      </div>
+      <div id="roundnumberdiv">
+        <span id="roundNumber" class="displaycard"></span>
+      </div>
+    </div>
+
+    <div id="computercard">
+      <img id="computername" class="displaycard" src="../img/COMPUTER.gif" alt="">
+    </div>
+  </header>
+
+  <main>
+
+    <section id="gamemid">
+      <section id="spacermid">
+      </section>
+      <section id="battleRack">
+>>>>>>> fd1e22e1de7979f3f48dd6d2eede919d86c5b736
 
         <div id="computercard">
             <img id="computername" class="displaycard" src="../img/COMPUTER.gif" alt="">
         </div>
 
+<<<<<<< HEAD
 
             
 
@@ -73,9 +105,33 @@
 
 
       </main>
+=======
+        <div id="outcomeTrack">
+          <img id="outcomeTrackImg" src="">
+        </div>
+        <!-- to right side -->
+        <div id="computerTrack" class="moving-hands">
+          <img id="computerTrackImg" src="">
+        </div>
+      </section>
+
+      <!-- Center -->
+      <div id="feedBackRack">
+        <div id="feedBackRackL">aeferf</div>
+        <div id="feedBackRackR">aeferf</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section>    
+      <!-- display basic/modifier images and 'how to play' button -->
+      <div class="playrack">
+>>>>>>> fd1e22e1de7979f3f48dd6d2eede919d86c5b736
 
       <footer>
 
+<<<<<<< HEAD
         <!-- display heart img and number of lives remaining
          -->
          
@@ -126,6 +182,19 @@
             
             <img id="first-modifier" src="" alt="">
             <img id="second-modifier" src="" alt="">
+=======
+        <div id="mainselections">
+          <div class="selectdiv">
+            <img id="rock" src="../img/ROCKplay.gif" alt="">
+          </div>
+
+          <div class="selectdiv">
+            <img id="paper" src="../img/PAPERplay.gif" alt="">
+          </div>
+
+          <div class="selectdiv">
+            <img id="scissors" src="../img/SCISSORplay.gif" alt="">
+>>>>>>> fd1e22e1de7979f3f48dd6d2eede919d86c5b736
           </div>
             
           </section>
@@ -142,6 +211,7 @@
               <source src="../audio/gameplay.mp3">
         </div>
 
+<<<<<<< HEAD
 
         <div id="GO-window" class="gameover">
           <div class="modal-content">
@@ -149,6 +219,11 @@
               <h2>GAME OVER!</h2>
             <button id="back-to-home">Back to Home</button>
           </form>
+=======
+        <div id="modcard">
+          <div class="selectdivmod">
+            <img id="cannibal" src="../img/CANNONplay.gif" alt="">
+>>>>>>> fd1e22e1de7979f3f48dd6d2eede919d86c5b736
           </div>
         </div>
       
@@ -176,8 +251,68 @@
           </form>
           </div>
         </div>
+<<<<<<< HEAD
   
     </footer>
 
     <script src ="../JS/app.js"></script>
+=======
+      </div>
+    </section>
+  </footer>
+</body>
+
+<footer>
+  <!-- Audio  -->
+  <div>
+    <img id="audio-img" src="../img/audio.svg" alt="audio playing">
+    <audio id="audio-player" controls autoplay loop>
+      <source src="../audio/gameplay.mp3">
+      </div>
+      
+      <!-- Go back to Home page after finished window -->
+      <div id="GO-window" class="gameover">
+        <div class="modal-content">
+          <form id="gameover-window">
+            <h2>GAME OVER!</h2>
+            <button id="back-to-home">Back to Home</button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- How to play instruction -->
+        <div id="howtoplaydiv">
+          <a href="#" id="how-to-play">How To Play</a>
+        </div>
+
+  <div id="instruction-window" class="instruction">
+    <div class="modal-content">
+      <form id="howtoplay-window">
+        <h2>HOW TO PLAY:</h2>
+
+        <p>It's Rock Paper Scissors.</p>
+        <p>
+          <img class="playicon" src="../img/ROCKplay.gif" alt="Cannibal image">
+          <img class="playicon" src="../img/PAPERplay.gif" alt="Cannibal image">
+          <img class="playicon" src="../img/SCISSORplay.gif" alt="Cannibal image">
+        </p>
+
+        <p>But wait, add MODIFIERS!</p>
+        <p>
+          <img class="playicon" src="../img/CANNONplay.gif" alt="Cannibal image"> +CANNIBAL: You WIN tie breaker!
+          <br>Eat when you're hungry to gain lives!</p>
+
+        <p>
+          <img class="playicon" src="../img/TIMEplay.gif" alt="Cannibal image"> +TIME MACHINE: You play against computer's 2nd past hand. Remember!
+          <br>Win hands to unlock!</p>
+        <button id="exit-instruction">Back to Game</button>
+      </form>
+    </div>
+  </div>
+
+</footer>
+
+<script src="../JS/app.js"></script>
+
+>>>>>>> fd1e22e1de7979f3f48dd6d2eede919d86c5b736
 </html>
