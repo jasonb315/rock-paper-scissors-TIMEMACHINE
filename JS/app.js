@@ -288,7 +288,7 @@ function computerCannibalCalculation() {
 
 //player functions
 function playerSelRock() {
-  playerRock('playerTrackImg');
+  playerrock('playerTrackImg');
   computerDecision();
   timeMachineActivation();
 
@@ -304,7 +304,7 @@ function playerSelRock() {
 }
 
 function playerSelPaper() {
-  playerPaper('playerTrackImg');
+  playerpaper('playerTrackImg');
   computerDecision();
   timeMachineActivation();
 
@@ -320,7 +320,7 @@ function playerSelPaper() {
 }
 
 function playerSelScissors() {
-  playerScissors('playerTrackImg');
+  playerscissors('playerTrackImg');
   computerDecision();
   timeMachineActivation();
 
@@ -336,15 +336,15 @@ function playerSelScissors() {
 }
 //////////////////////////////////////////////////////////
 
-function playerRock(myImg) {
+function playerrock(myImg) {
   document.getElementById(myImg).src = '../img/ROCKplay.gif';
 }
 
-function playerPaper(myImg) {
+function playerpaper(myImg) {
   document.getElementById(myImg).src = '../img/PAPERplay.gif';
 }
 
-function playerScissors(myImg) {
+function playerscissors(myImg) {
   document.getElementById(myImg).src = '../img/SCISSORplay.gif';
 }
 //////////
