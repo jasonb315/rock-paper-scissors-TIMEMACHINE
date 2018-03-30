@@ -9,8 +9,6 @@ feedBackRackL.textContent = 'FIGHT!!';
 var feedBackRackR = document.getElementById('feedBackRackR');
 feedBackRackR.textContent = 'FIGHT!!';
 
-
-/////
 var livesCounter = document.getElementById('livesCounter');
 livesCounter.textContent = lives;
 
@@ -24,7 +22,6 @@ var timeMachineUsable = false;
 var timeWarp = false;
 
 //computer variables
-// var computerPrevious = '';
 var computerPrevious = [];
 var computerChoice = '';
 var computerModifierRandom = Math.random();
@@ -52,40 +49,32 @@ playerTM.checked = false;
 //display user name
 var getUserName = localStorage.getItem('TM-username');
 var userName = JSON.parse(getUserName);
-
 var userNameHere = document.getElementById('name');
 userNameHere.textContent = userName;
 
 var cannibalUse = 0;
 var cannibalCounter = 0;
-//take next counter, multiply it by the number of times you want it to be used, then add that to previous counter
 
 function cannibalFreqMod() {
   if (cannibalUse <= 3) {
     cannibalCounter = 1;
-    console.log('shift up');
   }
   else if (cannibalUse <= 6) {
     cannibalCounter = 2;
-    console.log('shift up2');
   }
   else if (cannibalUse <= 9) {
     cannibalCounter = 3;
-    console.log('shift up3');
 
   }
   else if (cannibalUse <= 12) {
     cannibalCounter = 4;
-    console.log('shift up4');
 
   }
   else if (cannibalUse <= 15) {
     cannibalCounter = 5;
-    console.log('shift up5');
 
   } else {
     cannibalCounter = 6;
-    console.log('shift up6');
   }
 }
 
@@ -124,7 +113,6 @@ playerRock.addEventListener('click', playerSelRock);
 playerPaper.addEventListener('click', playerSelPaper);
 playerScissors.addEventListener('click', playerSelScissors);
 
-//when used, winStrk =0
 function timeMachineIdentifier() {
   if (timeMachineUsable) {
     playerTM.style.opacity = '1';
@@ -149,7 +137,6 @@ function triggerGame() {
     var displayRound = round + 1;
     var displayElement = document.getElementById('roundNumber');
     displayElement.textContent = displayRound;
-    console.log(computerPrevious);
 
     cannibalIdentifier();
     computerCannibalCalculation();
@@ -158,11 +145,8 @@ function triggerGame() {
   } else {
     gameOver();
     gameIsOver();
-    // window.location.href = '../index.html';
   }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function win() {
   feedBackRackL.textContent = '\"haHA!\"';
@@ -202,11 +186,11 @@ function tie() {
     cannibalTurn = 0;
     computerCannibalTurn = 0;
     foodFight();
-    display('../img/TIE.gif');//tie img
+    display('../img/TIE.gif');
   } else {
     feedBackRackL.textContent = '\"JINX!\"';
     feedBackRackR.textContent = '\"JINX!\"';
-    display('../img/TIE.gif');//tie img
+    display('../img/TIE.gif');
     triggerGame();
   }
 }
@@ -220,7 +204,7 @@ function lose() {
     cannibalTurn = 0;
   }
   winStrk = 0;
-  display('../img/LOSE.gif');//lose img
+  display('../img/LOSE.gif');
   feedBackRackL.textContent = '-1 LIFE';
   feedBackRackR.textContent = '\"haHA!\"';
 }
@@ -334,7 +318,6 @@ function playerSelScissors() {
   timeMachineDestination();
   triggerGame();
 }
-//////////////////////////////////////////////////////////
 
 function playerrock(myImg) {
   document.getElementById(myImg).src = '../img/ROCKplay.gif';
@@ -347,7 +330,7 @@ function playerpaper(myImg) {
 function playerscissors(myImg) {
   document.getElementById(myImg).src = '../img/SCISSORplay.gif';
 }
-//////////
+
 function computerRock(myImg2) {
   document.getElementById(myImg2).src = '../img/ROCKcomp.gif';
 }
@@ -364,7 +347,6 @@ function display(outcome) {
   document.getElementById('outcomeTrackImg').src = outcome;
 }
 
-//////////////////////////////////////////////////////////////////////
 var battleRack = document.getElementById('battleRack');
 var playerHand = document.getElementById('computerTrack');
 
@@ -405,7 +387,6 @@ function exitGameInstruction() {
 var audio = document.getElementById('audio-img');
 var audioPlayer = document.getElementById('audio-player');
 audio.addEventListener('click', audioPlayMute, false);
-// console.log('what happened to my audio?', event.target);
 function audioPlayMute() {
   if (audioPlayer.muted === true) {
     audioPlayer.muted = false;

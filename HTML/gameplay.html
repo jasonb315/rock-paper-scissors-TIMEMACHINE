@@ -16,7 +16,7 @@
 <body id="gameplayBody">
 
   <header>
-
+<!-- display Player: username, round#, and Computer on top -->
     <div id="namecard">
       <img id="playername" src="../img/PLAYER.gif" alt="">
       <span id="name"></span>
@@ -35,21 +35,13 @@
     <div id="computercard">
       <img id="computername" class="displaycard" src="../img/COMPUTER.gif" alt="">
     </div>
-
-
-
-
-
   </header>
 
   <main>
-    <!-- ////////////////////////////////////// -->
 
     <section id="gamemid">
-
       <section id="spacermid">
       </section>
-
       <section id="battleRack">
 
         <!-- to left side -->
@@ -64,31 +56,19 @@
         <div id="computerTrack" class="moving-hands">
           <img id="computerTrackImg" src="">
         </div>
-
       </section>
+
+      <!-- Center -->
       <div id="feedBackRack">
         <div id="feedBackRackL">aeferf</div>
         <div id="feedBackRackR">aeferf</div>
       </div>
-
     </section>
-
-    <!-- ////////// -->
-
-
   </main>
 
   <footer>
-
-    <!-- display heart img and number of lives remaining
-         -->
-
-
-    <!-- display basic/modifier images and 'how to play' button -->
-    <section>
-
-
-
+    <section>    
+      <!-- display basic/modifier images and 'how to play' button -->
       <div class="playrack">
 
         <div id="heartrack">
@@ -100,14 +80,15 @@
           <div class="selectdiv">
             <img id="rock" src="../img/ROCKplay.gif" alt="">
           </div>
+
           <div class="selectdiv">
             <img id="paper" src="../img/PAPERplay.gif" alt="">
           </div>
+
           <div class="selectdiv">
             <img id="scissors" src="../img/SCISSORplay.gif" alt="">
           </div>
         </div>
-
 
         <div id="modcard">
           <div class="selectdivmod">
@@ -119,45 +100,33 @@
           </div>
           <span id="modify">POWERUP</span>
         </div>
-
       </div>
-
-
-      <!-- <img src="img/PAPERplay.gif" alt=""> -->
-      <label for="">
-      </label>
-
-
-      <img id="first-modifier" src="" alt="">
-      <img id="second-modifier" src="" alt="">
-      </div>
-
     </section>
   </footer>
-
 </body>
 
 <footer>
-  <div id="howtoplaydiv">
-    <a href="#" id="how-to-play">How To Play</a>
-  </div>
   <!-- Audio  -->
   <div>
     <img id="audio-img" src="../img/audio.svg" alt="audio playing">
     <audio id="audio-player" controls autoplay loop>
       <source src="../audio/gameplay.mp3">
-  </div>
-
-
-  <div id="GO-window" class="gameover">
-    <div class="modal-content">
-      <form id="gameover-window">
-        <h2>GAME OVER!</h2>
-        <button id="back-to-home">Back to Home</button>
-      </form>
-    </div>
-  </div>
-
+      </div>
+      
+      <!-- Go back to Home page after finished window -->
+      <div id="GO-window" class="gameover">
+        <div class="modal-content">
+          <form id="gameover-window">
+            <h2>GAME OVER!</h2>
+            <button id="back-to-home">Back to Home</button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- How to play instruction -->
+        <div id="howtoplaydiv">
+          <a href="#" id="how-to-play">How To Play</a>
+        </div>
 
   <div id="instruction-window" class="instruction">
     <div class="modal-content">
