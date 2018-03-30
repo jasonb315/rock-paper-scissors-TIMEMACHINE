@@ -4,13 +4,10 @@ var round = 0;
 var lives = 10;
 
 /////FEEDBACKRACK
-
-
 var feedBackRackL = document.getElementById('feedBackRackL');
 feedBackRackL.textContent = 'FIGHT!!';
 var feedBackRackR = document.getElementById('feedBackRackR');
 feedBackRackR.textContent = 'FIGHT!!';
-
 
 
 /////
@@ -30,10 +27,15 @@ var timeWarp = false;
 // var computerPrevious = '';
 var computerPrevious = [];
 var computerChoice = '';
+var computerModifierRandom = Math.random();
+
 // Computer modifier variables
 var computerCannibalActivation = false;
 var computerCannibalTurn = 0;
 
+//Exit Game window
+var gameOverWindow = document.getElementById('GO-window');
+var exitToHomeButton = document.getElementById('back-to-home');
 
 // var playerChoice = ;
 var playerRock = document.getElementById('rock');
@@ -84,7 +86,6 @@ function cannibalFreqMod() {
   } else {
     cannibalCounter = 6;
     console.log('shift up6');
-
   }
 }
 
@@ -99,7 +100,6 @@ function cannibalIdentifier() {
     playerCannibal.removeEventListener('click', activateCannibal);
     cannibalTurn++;
   }
-
 }
 
 function activateCannibal() {
@@ -110,11 +110,11 @@ function activateCannibal() {
   cannibalFreqMod();
 }
 
-function foodFight(){
-  if(
+function foodFight() {
+  if (
     feedBackRackL.textContent === 'USED CANNIBAL MODE!' &&
     feedBackRackR.textContent === 'USED CANNIBAL MODE!'
-  ){
+  ) {
     feedBackRackL.textContent = 'FOOD FIGHT!!';
     feedBackRackR.textContent = 'FOOD FIGHT!!';
   }
@@ -165,7 +165,6 @@ function triggerGame() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function win() {
-
   feedBackRackL.textContent = '\"haHA!\"';
   feedBackRackR.textContent = '\"BZZZz\"';
 
@@ -173,7 +172,6 @@ function win() {
     timeMachineUsable = true;
     feedBackRackL.textContent = 'WINNING STREAK!!';
   }
-
   if (cannibalActivate === true) {
     lives++;
     livesCounter.textContent = lives;
@@ -181,45 +179,34 @@ function win() {
     cannibalTurn = 0;
     feedBackRackL.textContent = 'NOM NOM: LIVES +1';
   }
-
   round++;
   winStrk++;
-
   display('../img/WIN.gif');
-
 }
 
 function tie() {
   if (cannibalActivate === true && computerCannibalActivation === false) {
     cannibalActivate = false;
     cannibalTurn = 0;
-    console.log('you cannibal');
     lives = lives++;
     livesCounter.textContent = lives;
     win();
   } else if (cannibalActivate === false && computerCannibalActivation === true) {
     computerCannibalActivation = false;
     computerCannibalTurn = 0;
-    console.log('computer cannibal');
     lose();
     feedBackRackR.textContent = 'USED CANNIBAL MODE!';
-
   } else if (cannibalActivate === true && computerCannibalActivation === true) {
     cannibalActivate = false;
     computerCannibalActivation = false;
     cannibalTurn = 0;
     computerCannibalTurn = 0;
-
     foodFight();
-
     display('../img/TIE.gif');//tie img
-
   } else {
-    console.log('no cannibals');
     feedBackRackL.textContent = '\"JINX!\"';
     feedBackRackR.textContent = '\"JINX!\"';
     display('../img/TIE.gif');//tie img
-
     triggerGame();
   }
 }
@@ -233,17 +220,14 @@ function lose() {
     cannibalTurn = 0;
   }
   winStrk = 0;
-
   display('../img/LOSE.gif');//lose img
-
   feedBackRackL.textContent = '-1 LIFE';
   feedBackRackR.textContent = '\"haHA!\"';
-
 }
 
 function gameOver() {
-  console.log(round);
   var loadLocalHighScore = localStorage.getItem('High-Score', loadLocalHighScore);
+
   if (loadLocalHighScore && loadLocalHighScore.length) {
     loadLocalHighScore = JSON.parse(loadLocalHighScore);
   }
@@ -258,7 +242,6 @@ function gameOver() {
   feedBackRackL.textContent = '\"EVIL TRIUMPHS!\"';
 }
 
-
 function timeMachineDestination() {
   computerPrevious.unshift(computerChoice);
   if (computerPrevious.length > 2) {
@@ -266,43 +249,35 @@ function timeMachineDestination() {
   }
 }
 
-
 function timeMachineActivation() {
   if (timeWarp === true) {
     computerChoice = computerPrevious[1];
     timeWarp = false;
   } if (computerChoice === 'rock') {
-    computerrock('computerTrackImg');
+    computerRock('computerTrackImg');
   } else if (computerChoice === 'paper') {
-    computerpaper('computerTrackImg');
+    computerPaper('computerTrackImg');
   } else {
-    computerscissors('computerTrackImg');
+    computerScissors('computerTrackImg');
   }
 }
-
 
 function computerDecision() {
   var computerValue = Math.random();
   if (computerValue < .33) {
     var computerSelectedChoice = 'rock';
-    computerrock('computerTrackImg');
-
+    computerRock('computerTrackImg');
   } else if (computerValue > .67) {
     computerSelectedChoice = 'paper';
-    computerpaper('computerTrackImg');
-
+    computerPaper('computerTrackImg');
   } else {
     computerSelectedChoice = 'scissors';
-    computerscissors('computerTrackImg');
+    computerScissors('computerTrackImg');
   }
   computerChoice = computerSelectedChoice;
 }
 
-var computerModifierRandom = Math.random();
-
 function computerCannibalCalculation() {
-
-
   if (computerCannibalTurn > 3 && computerModifierRandom > .25) {
     computerCannibalTurn = 0;
     computerCannibalActivation = true;
@@ -311,13 +286,10 @@ function computerCannibalCalculation() {
   }
 }
 
-
-
-
+//player functions
 function playerSelRock() {
-  playerrock('playerTrackImg');
+  playerRock('playerTrackImg');
   computerDecision();
-
   timeMachineActivation();
 
   if (computerChoice === 'scissors') {
@@ -328,35 +300,30 @@ function playerSelRock() {
     tie();
   }
   timeMachineDestination();
-  // computerPrevious = computerChoice;
   triggerGame();
 }
 
 function playerSelPaper() {
-  playerpaper('playerTrackImg');
+  playerPaper('playerTrackImg');
   computerDecision();
-
   timeMachineActivation();
 
   if (computerChoice === 'scissors') {
     lose();
-
   } else if (computerChoice === 'paper') {
     tie();
-
   } else if (computerChoice === 'rock') {
     win();
   }
   timeMachineDestination();
-  // computerPrevious = computerChoice;
   triggerGame();
 }
 
 function playerSelScissors() {
-  playerscissors('playerTrackImg');
+  playerScissors('playerTrackImg');
   computerDecision();
-
   timeMachineActivation();
+
   if (computerChoice === 'scissors') {
     tie();
   } else if (computerChoice === 'paper') {
@@ -365,31 +332,31 @@ function playerSelScissors() {
     lose();
   }
   timeMachineDestination();
-  // computerPrevious = computerChoice;
   triggerGame();
 }
 //////////////////////////////////////////////////////////
-function playerrock(myImg) {
+
+function playerRock(myImg) {
   document.getElementById(myImg).src = '../img/ROCKplay.gif';
 }
 
-function playerpaper(myImg) {
+function playerPaper(myImg) {
   document.getElementById(myImg).src = '../img/PAPERplay.gif';
 }
 
-function playerscissors(myImg) {
+function playerScissors(myImg) {
   document.getElementById(myImg).src = '../img/SCISSORplay.gif';
 }
 //////////
-function computerrock(myImg2) {
+function computerRock(myImg2) {
   document.getElementById(myImg2).src = '../img/ROCKcomp.gif';
 }
 
-function computerpaper(myImg2) {
+function computerPaper(myImg2) {
   document.getElementById(myImg2).src = '../img/PAPERcomp.gif';
 }
 
-function computerscissors(myImg2) {
+function computerScissors(myImg2) {
   document.getElementById(myImg2).src = '../img/SCISSORcomp.gif';
 }
 
@@ -401,26 +368,14 @@ function display(outcome) {
 var battleRack = document.getElementById('battleRack');
 var playerHand = document.getElementById('computerTrack');
 
-
 var playerTrack = document.getElementById('playerTrack');
 
-function displayPlayerHand() {
-
-}
-
-
 triggerGame();
-
 
 //How To Play Instruction Window
 var howToPlay = document.getElementById('how-to-play');
 var instruction = document.getElementById('instruction-window');
 var exitButton = document.getElementById('exit-instruction');
-
-//Exit Game window
-var gameOverWindow = document.getElementById('GO-window');
-
-var exitToHomeButton = document.getElementById('back-to-home');
 
 exitToHomeButton.addEventListener('click', exitToHome);
 
@@ -431,7 +386,6 @@ function exitToHome() {
 
 function gameIsOver() {
   gameOverWindow.style.display = 'block';
-
 }
 
 gameOverWindow.style.display = 'none';
