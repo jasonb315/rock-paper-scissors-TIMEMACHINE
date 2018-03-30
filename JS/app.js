@@ -361,6 +361,8 @@ function exitToHome() {
   window.location.href = '../index.html';
 }
 
+
+
 function gameIsOver() {
   gameOverWindow.style.display = 'block';
 }
